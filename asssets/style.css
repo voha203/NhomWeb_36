@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    font-family: Tahoma;
+}
 #main{
     
 }
@@ -10,9 +13,32 @@
     height: 46px;
     background-color: black;
 }
+#shop a {
+    font-size:20px;
+    color: #c95b5b !important;
+}
+#nav {
+
+}
+
+#nav li {
+    display: inline-block;
+}
+#nav li a {
+    color : #ffffff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 20px;
+}
+
+#nav .subna {
+    display: none;
+}
+
 #slider{
 
 }
+
 #content{
 
 }
