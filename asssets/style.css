@@ -14,37 +14,54 @@ html {
     background-color: black;
 }
 #shop a {
-    font-size: 24px;
     color: #c95b5b !important;
     background-color: transparent !important;
     cursor: default;
+    font-weight: bold;
 }
 
-#nav {
-
+#nav, subna {
+list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#nav > li{
+    display:inline-block;
 }
 
 #nav li {
-    display: inline-block;
+    position: relative;
+}
+#nav > li > a {
+    color: #ffffff;
+    text-transform: uppercase;
 }
 #nav li a {
-    color : #ffffff;
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px;
-    display: inline-block;
+    display: block;
     vertical-align: middle;
 }
-#nav li:hover a {
-    color: #000;
-    background-color: #ccc;
+
+#nav > li:hover > a,
+#nav .subna li:hover a{
+    color: #000000;
+    background-color: #938f8f;
 }
 #nav .subna {
-    display: none;
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: 150px;
+    top: 46px;
 }
-
+#nav .subna a {
+    color: black;
+}
 #slider{
-
+min-height: 500px;
+    background-color: black;
 }
 
 #content{
