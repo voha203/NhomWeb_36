@@ -19,8 +19,10 @@ html {
     cursor: default;
     font-weight: bold;
 }
-
-#nav, subna {
+#nav {
+    display: inline-block;
+}
+#nav, .subna {
 list-style-type: none;
     padding: 0;
     margin: 0;
@@ -50,18 +52,39 @@ list-style-type: none;
     background-color: #938f8f;
 }
 #nav .subna {
-    display: block;
+    display: none;
     position: absolute;
     background-color: white;
     width: 150px;
     top: 46px;
+    box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
 #nav .subna a {
     color: black;
+    padding: 0 15px;
+}
+#nav .nav-ic {
+    font-size: 14px;
+}
+#nav li:hover .subna {
+    display: block;
+}
+#header .searchBT {
+    display: inline-block;
+    float: right;
+}
+#header .searchBT:hover {
+    background-color: #8ab0ea ;
+    cursor: pointer;
+}
+#header .search-ic {
+    color: #fff;
+    font-size: 15px;
+    line-height: 46px;
+    padding: 0 25px;
+    font-weight: bold;
 }
 #slider{
-min-height: 500px;
-    background-color: black;
 }
 
 #content{
