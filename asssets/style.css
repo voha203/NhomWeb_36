@@ -3,43 +3,61 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-family: Tahoma;
 }
-#main{
-    
+
+#main {
+
 }
-#header{
+
+#header {
     height: 46px;
     background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 #shop a {
     color: #c95b5b !important;
     background-color: transparent !important;
     cursor: default;
     font-weight: bold;
 }
+
 #nav {
-    display: inline-block;
+    display: flex;
+    list-style-type: none;
 }
+
 #nav, .subna {
-list-style-type: none;
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
-#nav > li{
-    display:inline-block;
+
+#nav > li {
+    display: inline-block;
 }
 
 #nav li {
     position: relative;
 }
+
 #nav > li > a {
     color: #ffffff;
     text-transform: uppercase;
 }
+
 #nav li a {
     text-decoration: none;
+    text-transform: uppercase;
     line-height: 46px;
     padding: 0 24px;
     display: block;
@@ -47,49 +65,61 @@ list-style-type: none;
 }
 
 #nav > li:hover > a,
-#nav .subna li:hover a{
+#nav .subna li:hover a {
     color: #000000;
     background-color: #938f8f;
 }
+
 #nav .subna {
     display: none;
     position: absolute;
     background-color: white;
     width: 150px;
     top: 46px;
-    box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
+
 #nav .subna a {
     color: black;
     padding: 0 15px;
 }
+
 #nav .nav-ic {
     font-size: 14px;
 }
+
 #nav li:hover .subna {
     display: block;
 }
-#header .searchBT {
+
+#header .searchBT, #header .userN, #header .cartN {
     display: inline-block;
-    float: right;
-}
-#header .searchBT:hover {
-    background-color: #8ab0ea ;
     cursor: pointer;
 }
-#header .search-ic {
+.header i {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Đẩy icon sang phải */
+}
+#header .searchBT:hover, #header .userN:hover, #header .cartN:hover {
+    background-color: #8ab0ea;
+}
+
+#header .search-ic, #header .username, #header .cart {
     color: #fff;
     font-size: 15px;
     line-height: 46px;
     padding: 0 25px;
     font-weight: bold;
 }
-#slider{
+#slider {
 }
 
-#content{
-
+#content {
+    height: 1000px;
+    background-color: #ccc;
 }
-#footer{
+
+#footer {
 
 }
