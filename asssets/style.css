@@ -167,7 +167,36 @@ html {
 .slider_nav a:hover{
     opacity: 1;
 }
+#feature img{
+    width: 100%;
+    height: auto;
+}
 
+h5{
+    left: 10%;
+}
+
+#feature .fe_box{
+    width: 20%;
+    padding: 20px;
+    border: solid 2px #000000;
+    text-align: center;
+    margin: 20px;
+    margin-left: 50px;
+    border-radius: 5%;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.1);
+}
+#feature .fe_box h6{
+    
+    background-color: #ec8585;
+    padding: 9px 15px 6px 15px;
+    font-size: 13px;
+    line-height: 1;
+}
+
+#feature .fe_box:hover{
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.2) ;
+}
 
 /* #content {
     height: 1000px;
@@ -175,5 +204,4 @@ html {
 } */
 
 #footer {
-
 }
