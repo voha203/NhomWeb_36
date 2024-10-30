@@ -40,6 +40,12 @@ html {
     padding: 0;
     margin: 0;
 }
+#shop a {
+    color: #c95b5b !important;
+    background-color: transparent !important;
+    cursor: default;
+    font-weight: bold;
+}
 
 #nav > li {
     display: inline-block;
