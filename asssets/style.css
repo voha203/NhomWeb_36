@@ -209,7 +209,11 @@ h5{
     height: 1000px;
     background-color: #ccc;
 } */
-#title .
+#review { padding: 30px; border: initial; }
+.title { font-size: 24px; font-weight: bold; text-align: center; }
+.box { display: flex; align-items: center; margin-bottom: 20px; }
+.image img { border-radius: 10px; } .name { margin-left: 20px; }
+.name h3 { margin: 0; font-size: 20px; } .gia { font-size: 18px; color: #555; }
 
 #footer {
 }
