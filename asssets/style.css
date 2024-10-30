@@ -219,6 +219,8 @@ h5{
     font-weight: bold;
     text-align: center;
     padding: 20px;
+    background: antiquewhite;
+    border-radius: 10px;
 }
 .sanpham{
     display: flex;
@@ -231,19 +233,21 @@ h5{
 
     padding: 20px;
     margin: 20px ;
-    border: black 1px solid;
+    border: black 2.5px solid;
+    border-radius: 10px;
     flex-wrap: wrap;
     display: inline-block;
 }
+.image{
+    border: initial;
+}
 .name{
-    font-weight: bold;
-
-
-
-
-
-
-
+    padding: 10px;
+    border: initial;
+    text-align: center;
+}
+.gia{
+    font-weight:bold;
 }
 
 
