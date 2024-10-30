@@ -211,6 +211,7 @@ h5{
 } */
 #review {
     padding: 20px ;
+
 }
 
 .title {
@@ -222,6 +223,8 @@ h5{
 .sanpham{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 
 }
 .box {
@@ -230,12 +233,14 @@ h5{
     margin: 20px ;
     border: black 1px solid;
     flex-wrap: wrap;
-    gap: 10px;
     display: inline-block;
 }
 .name{
     font-weight: bold;
-    text-align: left;
+
+
+
+
 
 
 
