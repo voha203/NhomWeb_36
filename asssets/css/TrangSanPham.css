@@ -13,8 +13,7 @@ body {
 }
 
 .product-container {
-    width: 80%;
-  /*  text-align: center; */
+   text-align: center;
 }
 
 .product-container h1 {
@@ -60,3 +59,47 @@ body {
     color: #333;
 }
 
+ 
+ 
+ /* Định dạng cho container của pagination */
+.pagination {
+    
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Định dạng chung cho các nút */
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.pagination-btn:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+/* Định dạng cho nút được chọn */
+.pagination-btn.active {
+    background-color: black;
+    color: white;
+}
+
+/* Định dạng cho nút bị vô hiệu hóa */
+.pagination-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
