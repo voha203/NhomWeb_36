@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+*{
+padding:0;
+margin: 0;
+box-sizing:border-box;
+}
+=======
 :root{
     --white: #fff;
     --black: #000;
@@ -28,3 +35,4 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
+>>>>>>> 5496b0e519de90f98994792b48b8ac92d82a74c6
