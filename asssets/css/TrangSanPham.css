@@ -9,35 +9,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-color: #f9f9f9;
 }
 
 .product-container {
     width: 80%;
-    max-width: 1200px;
-    text-align: center;
+  /*  text-align: center; */
 }
 
 .product-container h1 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
-}
-
-.filter {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.filter select {
-    padding: 5px;
+    font-weight: bold;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 }
 
