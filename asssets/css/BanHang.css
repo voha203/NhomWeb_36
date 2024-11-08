@@ -18,7 +18,7 @@ body {
 }
 
 .product-container h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 20px;
     font-weight: normal;
 }
@@ -60,6 +60,28 @@ body {
     color: #333;
 }
 
- 
+.view-all {
+    margin: 20px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.view-all::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.view-all-container {
+    text-align: center;
+}
  
  
