@@ -18,9 +18,9 @@ body {
 }
 
 .product-container h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .product-grid {
