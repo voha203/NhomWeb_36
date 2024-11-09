@@ -1,17 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-}
+/*
 
 .product-container {
    text-align: center;
@@ -62,7 +49,7 @@ body {
 
  
  
- /* Định dạng cho container của pagination */
+ !* Định dạng cho container của pagination *!
 .pagination {
 
     display: flex;
@@ -72,7 +59,7 @@ body {
     gap: 8px;
 }
 
-/* Định dạng chung cho các nút */
+!* Định dạng chung cho các nút *!
 .pagination-btn {
     width: 40px;
     height: 40px;
@@ -88,19 +75,20 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Hiệu ứng hover */
+!* Hiệu ứng hover *!
 .pagination-btn:hover:not(.active) {
     background-color: #f0f0f0;
 }
 
-/* Định dạng cho nút được chọn */
+!* Định dạng cho nút được chọn *!
 .pagination-btn.active {
     background-color: black;
     color: white;
 }
 
-/* Định dạng cho nút bị vô hiệu hóa */
+!* Định dạng cho nút bị vô hiệu hóa *!
 .pagination-btn:disabled {
     color: #ccc;
     cursor: not-allowed;
 }
+*/
