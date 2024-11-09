@@ -1,0 +1,19 @@
+:root {
+    --white: white;
+    --black: black;
+    --text-color: #333;
+}
+* {
+    box-sizing: inherit;
+}
+html {
+    /*mặc  của 100% là 16px*/
+    font-size: 100%;
+    line-height: 1.6rem;
+
+    font-family: "Roboto Slab", sans-serif;
+
+}
+p {
+ font-size: 1rem;
+}
