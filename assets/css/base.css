@@ -10,10 +10,18 @@ html {
     /*mặc  của 100% là 16px*/
     font-size: 100%;
     line-height: 1.6rem;
-
     font-family: "Roboto Slab", sans-serif;
-
+    box-sizing: border-box;
 }
-p {
- font-size: 1rem;
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid_full-width {
+    width: 100%;
+}
+.grid_row {
+    display: flex;
+    flex-wrap: wrap;
 }
