@@ -60,47 +60,28 @@ body {
     color: #333;
 }
 
- 
- 
- /* Định dạng cho container của pagination */
-.pagination {
-
-    display: flex;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Định dạng chung cho các nút */
-.pagination-btn {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #ddd;
-    background-color: white;
-    color: black;
-    font-size: 16px;
+.view-all {
+    margin: 20px;
+    text-align: center;
+    font-size: 18px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
-/* Hiệu ứng hover */
-.pagination-btn:hover:not(.active) {
-    background-color: #f0f0f0;
-}
-
-/* Định dạng cho nút được chọn */
-.pagination-btn.active {
+.view-all::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
     background-color: black;
-    color: white;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
 }
 
-/* Định dạng cho nút bị vô hiệu hóa */
-.pagination-btn:disabled {
-    color: #ccc;
-    cursor: not-allowed;
+.view-all-container {
+    text-align: center;
 }
+ 
+ 
