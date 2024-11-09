@@ -10,6 +10,8 @@
 .header_navbar-list{
     padding-left: 0;
     list-style: none;
+    margin-top: 4px;
+
 }
 .header_navbar-item.shop {
     font-weight: 700; /* Độ đậm cao hơn */
@@ -41,7 +43,11 @@
     text-decoration: none;
     font-weight: 50;
 }
-
+.header_navbar-item:hover,
+.header_navbar-item-link:hover {
+    cursor: pointer;
+    color: rgba(255,255,255,0.7);
+}
 .header_navbar-item.strong {
     font-weight: 400;
 }
