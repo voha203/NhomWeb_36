@@ -95,3 +95,78 @@ font-size: 1.8rem;
 .header__qr-dl {
 
 }
+
+/* phần container*/
+
+
+
+/*containner 1*/
+.product-container {
+   text-align: center;
+}
+
+.product-container h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-name {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.view-all {
+    margin: 20px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.view-all::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+ }
+ .view-all-container {
+    text-align: center;
+}
