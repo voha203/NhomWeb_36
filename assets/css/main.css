@@ -33,6 +33,7 @@
 .header_navbar-item {
     margin: 0 8px;
     position: relative;
+    min-height: 18px;
 }
 
 .header_navbar-item,
@@ -42,6 +43,12 @@
     color:var(--white);
     text-decoration: none;
     font-weight: 50;
+}
+.header_navbar-item,
+.header_navbar-item-link,
+.header__navbar-icon-link {
+    display: inline-flex;
+    align-items: center;
 }
 .header_navbar-item:hover,
 .header_navbar-item-link:hover {
@@ -60,4 +67,19 @@
     right: -9px;
     top: 50%;
     transform: translateY(-50%);
+}
+.header__navbar-icon-link {
+    font-size: 1.4rem;
+}
+.header_navbar-icons {
+font-size: 1.8rem;
+    margin: 0 4px;
+}
+.header_navbar-icons:hover {
+    color: var(--white); /* Giữ nguyên màu trắng khi hover */
+}
+
+.header_navbar-title--no-pointer {
+    cursor: text;
+    color: var(--white);
 }
