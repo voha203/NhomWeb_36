@@ -191,38 +191,35 @@ font-size: 1.8rem;
     border-radius: 8px;
 }
 
-/* Container chính */
-.features-container {
+/* Container 3*/
+.container_3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px 10px;
-    background-color: #fdebd2; /* Màu nền nhạt giống hình ảnh */
+    background-color: #fdebd2; 
     border-radius: 8px;
 }
 
-/* Mỗi item */
 .feature-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     font-family: Arial, sans-serif;
-    color: #000; /* Màu chữ đen */
+    color: #000; 
     font-size: 14px;
 }
 
-/* Hình ảnh biểu tượng */
 .feature-item img {
-    width: 40px; /* Đặt kích thước icon */
-    height: 40px;
-    margin-bottom: 8px;
+    width: 30px; 
+    height: 30px;
+    margin-bottom: 10px;
 }
 
-/* Văn bản mô tả */
 .feature-item p {
     margin: 0;
     font-size: 14px;
-    color: #555; /* Màu chữ nhạt */
+    color: #555; 
     font-weight: 500;
 }
