@@ -193,10 +193,11 @@ font-size: 1.8rem;
 
 /* Container 3*/
 .container_3 {
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 10px;
+    padding: 30px 15px;
     background-color: #fdebd2; 
     border-radius: 8px;
 }
@@ -206,7 +207,7 @@ font-size: 1.8rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #000; 
     font-size: 14px;
 }
@@ -223,3 +224,117 @@ font-size: 1.8rem;
     color: #555; 
     font-weight: 500;
 }
+
+/* container 4*/
+
+/* Container chính */
+.container_4 {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Tiêu đề */
+.testimonial-title {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* Khung các lời chứng thực */
+.testimonials {
+    display: flex;
+    justify-content: space-between; /* Thay đổi từ 'space-around' sang 'space-between' */
+    flex-wrap: nowrap; /* Đảm bảo các testimonial không bị wrap xuống hàng tiếp theo */
+    gap: 20px;
+}
+
+/* Mỗi lời chứng thực */
+.testimonial {
+    display: flex;
+    flex: 1 1 320px; /* Điều chỉnh để các testimonial có chiều rộng hợp lý và không bị ép */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Văn bản canh trái */
+    gap: 20px;
+}
+
+/* Hình đại diện */
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover; /* Đảm bảo hình ảnh luôn vừa khít */
+}
+
+/* Nội dung và tác giả */
+.testimonial-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Nội dung lời chứng thực */
+.testimonial-content {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Tác giả */
+.testimonial-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px; /* Khoảng cách giữa content và author */
+}
+
+
+/* trang sp*/
+
+/* Định dạng chung cho các nút */
+
+.pagination {
+
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.pagination-btn:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+/* Định dạng cho nút được chọn */
+.pagination-btn.active {
+    background-color: black;
+    color: white;
+}
+
+/* Định dạng cho nút bị vô hiệu hóa */
+.pagination-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
