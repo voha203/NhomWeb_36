@@ -100,14 +100,15 @@ font-size: 1.8rem;
 
 
 
-/*containner 1*/
+/* containner 1 */
 .product-container {
    text-align: center;
+   margin: 20px;
 }
 
 .product-container h1 {
-    font-size: 25px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin: 20px ;
     font-weight: normal;
 }
 
@@ -170,12 +171,14 @@ font-size: 1.8rem;
  .view-all-container {
     text-align: center;
 }
+
+
 .container_0 {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    margin: 10px 2px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hinhanh {
@@ -237,7 +240,7 @@ font-size: 1.8rem;
 
 /* Tiêu đề */
 .testimonial-title {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: normal;
     margin-bottom: 20px;
 }
