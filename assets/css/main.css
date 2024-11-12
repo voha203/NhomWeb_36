@@ -169,8 +169,18 @@ font-size: 1.8rem;
  }
  .view-all-container {
     text-align: center;
-
-
-
-
 }
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s;
+  }
+  
+  .slider img {
+    width: 100%;
+    height: auto;
+  }
