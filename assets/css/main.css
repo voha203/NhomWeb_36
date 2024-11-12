@@ -170,5 +170,24 @@ font-size: 1.8rem;
  .view-all-container {
     text-align: center;
 }
+.container_0 {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.hinhanh {
+    width: 100%; 
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+.hinhanh img {
+    width: 100%; 
+    height: auto; 
+    display: block;
+    border-radius: 8px;
+}
 
