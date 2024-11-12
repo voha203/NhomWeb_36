@@ -224,6 +224,73 @@ font-size: 1.8rem;
     font-weight: 500;
 }
 
+/* container 4*/
+
+/* Container chính */
+.container_4 {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+.testimonial-title {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+/* Khung các lời chứng thực */
+.testimonials {
+    display: flex;
+    justify-content: space-between; /* Thay đổi từ 'space-around' sang 'space-between' */
+    flex-wrap: nowrap; /* Đảm bảo các testimonial không bị wrap xuống hàng tiếp theo */
+    gap: 20px;
+}
+
+/* Mỗi lời chứng thực */
+.testimonial {
+    display: flex;
+    flex: 1 1 320px; /* Điều chỉnh để các testimonial có chiều rộng hợp lý và không bị ép */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Văn bản canh trái */
+    gap: 20px;
+}
+
+/* Hình đại diện */
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover; /* Đảm bảo hình ảnh luôn vừa khít */
+}
+
+/* Nội dung và tác giả */
+.testimonial-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Nội dung lời chứng thực */
+.testimonial-content {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Tác giả */
+.testimonial-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px; /* Khoảng cách giữa content và author */
+}
 
 
 /* trang sp*/
