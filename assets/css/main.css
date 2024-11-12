@@ -72,7 +72,7 @@
     font-size: 1.4rem;
 }
 .header_navbar-icons {
-font-size: 1.8rem;
+    font-size: 1.8rem;
     margin: 0 4px;
 }
 .header_navbar-icons:hover {
@@ -84,16 +84,30 @@ font-size: 1.8rem;
     color: var(--white);
 }
 .header__qr{
-
+    width: 150px;
+    background-color: var(--white);
+    position: absolute;
+    left: 0;
+    top: 120%;
+    padding: 8px;
+    border-radius: 2px;
 }
 .header__qr-img {
-
+    width: 100%;
 }
 .header__qr-apps {
-
+    display: flex;
+    justify-content: space-between;
 }
-.header__qr-dl {
+.header__qr-link:first-child {
+    margin-left: 0.9rem;
+}
+.header__qr-link:nth-child(2) {
+    margin-right: 0.9rem;
+}
 
+.header__qr-dl {
+    height: 12px;
 }
 
 /* phần container*/
