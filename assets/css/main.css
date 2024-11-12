@@ -254,7 +254,7 @@ font-size: 1.8rem;
 .testimonial {
     display: flex;
     flex: 1 1 320px; /* Điều chỉnh để các testimonial có chiều rộng hợp lý và không bị ép */
-    background-color: #f9f9f9;
+    background-color: #fdebd2;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -277,7 +277,7 @@ font-size: 1.8rem;
     justify-content: space-between;
 }
 
-/* Nội dung lời chứng thực */
+/* Nội dung lời đánh giá */
 .testimonial-content {
     font-size: 14px;
     font-style: italic;
@@ -290,8 +290,7 @@ font-size: 1.8rem;
     font-size: 14px;
     font-weight: bold;
     color: #333;
-    margin-top: 10px; /* Khoảng cách giữa content và author */
-}
+    }
 
 
 /* trang sp*/
