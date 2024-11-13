@@ -29,7 +29,9 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
+.header_navbar-item.shop:hover .header__qr {
+    display: block;
+}
 .header_navbar-item {
     margin: 0 8px;
     position: relative;
@@ -91,6 +93,8 @@
     top: 120%;
     padding: 8px;
     border-radius: 2px;
+    display: none;
+    animation: fadeIn ease 1s;
 }
 .header__qr-img {
     width: 100%;
@@ -114,14 +118,15 @@
 
 
 
-/*containner 1*/
+/* containner 1 */
 .product-container {
    text-align: center;
+   margin: 20px;
 }
 
 .product-container h1 {
-    font-size: 25px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin: 20px ;
     font-weight: normal;
 }
 
@@ -184,12 +189,14 @@
  .view-all-container {
     text-align: center;
 }
+
+
 .container_0 {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    margin: 10px 2px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hinhanh {
@@ -251,7 +258,7 @@
 
 /* Tiêu đề */
 .testimonial-title {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: normal;
     margin-bottom: 20px;
 }
