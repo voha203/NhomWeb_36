@@ -113,6 +113,39 @@
 .header__qr-dl {
     height: 12px;
 }
+/*header__notification*/
+.header__notify {
+position: absolute;
+    top: 118%;
+    right: 5px;
+    width: 404px;
+    border: 1px solid #D3D3D3;
+    background: var(--white);
+}
+.header__notify-header{
+
+}
+.header__notify-list{
+
+}
+.header__notify-item{
+
+}
+.header__notify-link{
+
+}
+.header__notify-img{
+
+}
+.header__notify-info{
+
+}
+.header__notify-name{
+
+}
+.header__notify-description{
+
+}
 
 /* phần container*/
 
