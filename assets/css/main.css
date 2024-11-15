@@ -123,28 +123,45 @@ position: absolute;
     background: var(--white);
 }
 .header__notify-header{
-
+    height: 40px;
+    background-color: var(--white);
+}
+.header__notify-header h3{
+    color: #999;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height:40px;
 }
 .header__notify-list{
+    padding-left: 0;
 
 }
 .header__notify-item{
 
 }
 .header__notify-link{
-
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
 }
-.header__notify-img{
+.header__notify-img {
 
+    object-fit: contain;
 }
 .header__notify-info{
-
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
 }
-.header__notify-name{
 
+.header__notify-name{
+    font-size: 1.4rem;
+    color: var(--black);
 }
 .header__notify-description{
-
+    font-size: 1.2rem;
+    color: #756F6E;
 }
 
 /* phần container*/
