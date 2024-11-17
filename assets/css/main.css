@@ -324,7 +324,6 @@ position: absolute;
 /* Container chính */
 .container_4 {
     text-align: center;
-    padding: 20px;
     background-color: #fff;
     font-family: "Roboto", sans-serif;
 }
@@ -466,7 +465,7 @@ position: absolute;
     width: 100%; /* Chiếm toàn bộ chiều rộng vùng chứa */
     max-width: 500px; /* Giới hạn kích thước tối đa */
     height: auto;
-    border-radius: 8px; /* Bo góc */
+    border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
 }
 
