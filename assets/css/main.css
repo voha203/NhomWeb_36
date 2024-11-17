@@ -670,3 +670,11 @@ position: absolute;
    padding-left: 5px;
         
 }
+.container_ctsp_3.product-container{
+    font-size: 24px;
+    font-weight: normal;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #333;
+
+}
