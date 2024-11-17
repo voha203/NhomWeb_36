@@ -493,14 +493,14 @@ position: absolute;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    padding: 20px;
+    padding: 10px;
 }
 
 .product-title {
     font-size: 24px;
     font-weight: normal;
     color: #333;
-    margin-bottom: 10px;
+    margin: 10px 0;
     
 }
 
@@ -610,4 +610,11 @@ position: absolute;
 .feature-items p {
     font-size: 14px; /* Kích thước chữ */
     color: #555; /* Màu chữ */
+}
+/*phần ctsp 2*/
+.container_ctsp_2 {
+    padding: 20px;
+    background-color: #a54c4c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
 }
