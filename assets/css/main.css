@@ -448,7 +448,10 @@ position: absolute;
     gap: 20px; /* Khoảng cách giữa các phần */
     padding: 10px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+
 }
 
 /* Phần hình ảnh bên trái */
@@ -457,6 +460,7 @@ position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
     gap: 10px; /* Khoảng cách giữa hình ảnh chính và thumbnails */
 }
 
@@ -465,6 +469,7 @@ position: absolute;
     max-width: 500px; /* Giới hạn kích thước tối đa */
     height: auto;
     border-radius: 8px; 
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
 }
 
@@ -613,8 +618,23 @@ position: absolute;
 }
 /*phần ctsp 2*/
 .container_ctsp_2 {
-    padding: 20px;
-    background-color: #a54c4c;
-    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+/* Tiêu đề chính trong khung */
+.title_ct {
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px;
+    background-color: #fdebd2; 
+    border-radius: 8px;
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    text-transform: uppercase; /* Chữ viết hoa */
+    color: #333;
 }
