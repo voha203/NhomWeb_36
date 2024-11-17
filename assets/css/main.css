@@ -631,7 +631,7 @@ position: absolute;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-   
+    padding: 10px;
     background-color: #fdebd2; 
     border-radius: 8px;
     margin-bottom: 15px;
@@ -643,8 +643,8 @@ position: absolute;
 
 } 
 .product-title {
-    font-size: 24px;
-    font-weight: bold; /* In đậm hơn mô tả */
+    font-size: 20px;
+    font-weight: normal; /* In đậm hơn mô tả */
    
 }
 /* Mô tả sản phẩm */
@@ -659,14 +659,14 @@ position: absolute;
     line-height: 1.6; /* Dòng thoáng hơn */
     margin-bottom: 10px; /* Khoảng cách giữa các mục */
 }
+
 .product-description h1{
   
-        font-size: 14px;
-        color: #555;
-        font-weight: normal;
-        line-height: 1.6; /* Dòng thoáng hơn */
-        margin-bottom: 10px; /* Khoảng cách giữa các mục */
-        padding-left: 5px;
+   font-size: 14px;
+   color: #555;
+   font-weight: normal;
+   line-height: 1.6; /* Dòng thoáng hơn */
+   margin-bottom: 10px; /* Khoảng cách giữa các mục */
+   padding-left: 5px;
         
-
 }
