@@ -475,8 +475,8 @@ position: absolute;
 }
 
 .thumbnail {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
@@ -546,7 +546,7 @@ position: absolute;
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -588,4 +588,26 @@ position: absolute;
     .main_image img {
         max-width: 100%;
     }
+}
+.container_1_item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột với chiều rộng đều */
+    grid-gap: 20px; /* Khoảng cách giữa các phần tử */
+    margin-top: 30px; /* Khoảng cách giữa các dòng */
+    text-align: center;
+}
+
+.feature-items {
+    text-align: center; /* Căn giữa nội dung trong mỗi phần tử */
+}
+
+.feature-items img {
+    width: 30px; /* Kích thước ảnh, có thể thay đổi tùy nhu cầu */
+    height: auto; /* Giữ tỷ lệ của ảnh */
+    margin-bottom: 5px; /* Khoảng cách giữa ảnh và văn bản */
+}
+
+.feature-items p {
+    font-size: 14px; /* Kích thước chữ */
+    color: #555; /* Màu chữ */
 }
