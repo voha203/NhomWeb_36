@@ -32,6 +32,9 @@
 .header_navbar-item.shop:hover .header__qr {
     display: block;
 }
+.header__navbar-item--has-notify:hover .header__notify {
+    display: block;
+}
 .header_navbar-item {
     margin: 0 8px;
     position: relative;
@@ -117,13 +120,35 @@
 
 .header__notify {
     position: absolute;
-    top: 120%;
+    top: 140%;
     width: 404px;
     right: 5px;
     border: 1px solid #D3D3D3;
     background-color: var(--white);
     cursor: default;
-
+    transform-origin: calc(100% - 20px) top;
+    animation: headerNotifyGrowth ease-in 0.3s;
+    display: none;
+}
+.header__notify::before {
+    content: "";
+    border-width: 20px 25px;
+    border-style: solid;
+    border-color: transparent
+    transparent var(--white) transparent;
+    position: absolute;
+    right: 12px;
+    top: -27px;
+}
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .header__notify-header {
     height: 40px;
