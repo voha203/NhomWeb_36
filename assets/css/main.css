@@ -617,29 +617,32 @@ position: absolute;
     color: #555; /* Màu chữ */
 }
 /*phần ctsp 2*/
+
 .container_ctsp_2 {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
-}
+    margin: 20px 2px;
+    text-align: center;
+   }
 
 /* Tiêu đề chính trong khung */
-.title_ct {
+.title_tdc {
     font-size: 24px;
     font-weight: normal;
-    text-align: center;
-    padding: 10px;
-    background-color: #fdebd2; 
-    border-radius: 8px;
-    margin-bottom: 15px;
-    color: #333;
+    border: initial;
+    margin: 20px;
 }
+.mt{
+    text-align: left;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+}
+
+
 .title_mt{
-    padding-top: 10px;
     padding-left: 10px;;
+    text-align: left;
+   
+
 
 } 
 .product-title {
