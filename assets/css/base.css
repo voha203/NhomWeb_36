@@ -48,3 +48,17 @@ padding vien nd 20px
 margin 20px 2px
 border-radius: 8px;
 padding 10px;
+font-size: 24px;
+    font-weight: normal;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #333;
+    line-height: 1.6;
+    color: #555;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: initial;
+   margin: 20px 2px;
+    text-align: center;
+     color: #f39c12; 
+     font-size: 14px;
