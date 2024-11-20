@@ -378,6 +378,8 @@
     text-align: center;
     background-color: #fff;
     font-family: "Roboto", sans-serif;
+    margin-bottom: 20px;
+
 }
 
 /* Tiêu đề */
@@ -736,6 +738,7 @@
     flex-wrap: wrap;
     padding: 0 20px;
     background-color:#fe6433 ;
+    border-radius: 8px;
 }
 
 .footer-section {
