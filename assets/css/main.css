@@ -63,6 +63,10 @@
 .header_navbar-item.strong {
     font-weight: 400;
 }
+.header_navbar-item.f {
+    font-weight: 400;
+
+}
 .header_navbar-item.strong::after {
     content: "";
     display: block;
