@@ -765,15 +765,22 @@
 
 
 /*trang đăng nhập*/
+#container_dn{
+    display: flex; /* Dùng flexbox để căn giữa nội dung */
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    width: 100vw; /* Chiều rộng toàn màn hình */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background-color: #f8f9fa; /* Màu nền */
+    position: relative;
+}
 
 .login-container {
-    margin: auto ;
-    background: #fff;
-    padding: 30px;
+    width: 400px;
+    background: #ffffff;
+    padding: 20px 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -892,5 +899,112 @@ h2 {
     color: #333;
 }
 
+/*trang quen mk*/
+/* Container cha */
+#container_forgot_password {
+    display: flex; /* Dùng flexbox để căn giữa nội dung */
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    width: 100vw; /* Chiều rộng toàn màn hình */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background-color: #f8f9fa; /* Màu nền */
+    position: relative;
+}
+
+/* Khung quên mật khẩu */
+.forgot-password-container {
+    width: 400px;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Tiêu đề */
+.forgot-password-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Đoạn mô tả */
+.forgot-password-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form quên mật khẩu */
+.forgot-password-form label {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+}
+
+.forgot-password-form span {
+    color: red;
+}
+
+.forgot-password-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.forgot-password-form .btn-submit {
+    margin-top: 15px;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.forgot-password-form .btn-submit:hover {
+    background: #0056b3;
+}
+
+/* Thông tin hỗ trợ */
+.support-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.support-info strong {
+    color: #333;
+}
+
+.support-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.support-info a:hover {
+    text-decoration: underline;
+}
+
+/* Link quay lại */
+.back-to-login {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-to-login:hover {
+    text-decoration: underline;
+}
 
 
