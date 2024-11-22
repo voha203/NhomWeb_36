@@ -1130,29 +1130,23 @@ ul li a i {
 
 .dashboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
 }
 
-/* Box for each dashboard item */
 .box {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 18px;
-}
-
-.box i {
-    font-size: 40px;
-    color: #3498db;
+    font-size: 14px;
 }
 
 .box h2 {
-    margin-top: 15px;
-    font-size: 24px;
+    margin-top: 10px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -1172,22 +1166,11 @@ ul li a i {
     font-size: 16px;
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .dashboard {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media screen and (max-width: 480px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-}
 /* Cấu hình cho nội dung chính */
 #admin-container {
     margin-left: 250px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .content header {
@@ -1231,7 +1214,8 @@ table thead {
 }
 
 table th, table td {
-    padding: 15px;
+    font-size: 14px;
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
