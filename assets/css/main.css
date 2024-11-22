@@ -1037,3 +1037,237 @@ h2 {
 }
 
 
+/*trang ADMIN*/
+/* Reset các thuộc tính mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cấu hình font chữ chung */
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Cấu hình Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2a3d56;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li i{
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+ul li a i {
+    margin-right: 10px; /* Khoảng cách giữa icon và text */
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1a2b3c;
+}
+/* Tạo đường rạch màu trắng */
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.profile-container {
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cấu hình hình ảnh của admin */
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+/* Cấu hình tên admin */
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 14px;
+}
+
+.box h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box p {
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.box span {
+    font-size: 16px;
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.box .status {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+/* Cấu hình cho nội dung chính */
+#admin-container {
+    margin-left: 250px;
+    padding: 10px;
+}
+
+.content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.content header h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.add-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+/* Cấu hình bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: #4caf50;
+    color: white;
+}
+
+table th, table td {
+    font-size: 14px;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+button.edit, button.delete {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+/* Cấu hình responsive */
+@media (max-width: 768px) {
+    #admin-container {
+        margin-left: 0;
+    }
+    .sidebar {
+        width: 200px;
+    }
+    table th, table td {
+        font-size: 14px;
+    }
+    .add-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
