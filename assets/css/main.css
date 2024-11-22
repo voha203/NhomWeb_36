@@ -1126,6 +1126,64 @@ ul li a i {
     color: #333;
 }
 
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Box for each dashboard item */
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+}
+
+.box i {
+    font-size: 40px;
+    color: #3498db;
+}
+
+.box h2 {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.box p {
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.box span {
+    font-size: 16px;
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.box .status {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
 /* Cấu hình cho nội dung chính */
 #admin-container {
     margin-left: 250px;
