@@ -769,7 +769,7 @@
 
 
 /*trang đăng nhập*/
-#container_dn{
+#container_dn,#container_dk{
     display: flex; /* Dùng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa ngang */
     align-items: center; /* Căn giữa dọc */
@@ -779,7 +779,7 @@
     position: relative;
 }
 
-.login-container {
+.login-container, .register-container {
     width: 400px;
     background: #ffffff;
     padding: 20px 30px;
@@ -794,7 +794,7 @@ h2 {
     color: #333;
 }
 
-.login-form label {
+.login-form label, .register-form label {
     display: block;
     text-align: left;
     margin-bottom: 5px;
