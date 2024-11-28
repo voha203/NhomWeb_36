@@ -285,11 +285,14 @@
 .header__cart {
     width: 140px;
     text-align: center;
+    position: relative;
 }
 
 .header__cart-icon {
     font-size: 2.4rem;
+    color: var(--white);
 }
+
 .header__search-input-wrap {
     flex: 1;
     height: 100%;
