@@ -1,3 +1,10 @@
+.form-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
 .form-container {
     background: #fff;
     padding: 20px;
@@ -26,4 +33,40 @@
     font-weight: bold;
     color: #555;
 }
+/* Input */
+.form-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
 
+/* Button */
+.form-container button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #555;
+}
+
+/* Liên kết */
+.form-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+}
