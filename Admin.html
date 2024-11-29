@@ -33,10 +33,12 @@
       
           <ul>
             
-                <li><a href="#"><i class="ti-home"></i>Trang chủ</a></li>
-                <li><a href="#"><i class="ti-bag"></i>Sản phẩm</a></li>
-                <li><a href="#"><i class="ti-package"></i>Đơn hàng</a></li>
-                <li><a href="#"><i class="ti-user"></i>Khách hàng</a></li>
+               
+            <ul>
+              <li><a href="#" onclick="changeContent('content1')"><i class="ti-home"></i>Trang chủ</a></li>
+              <li><a href="#" onclick="changeContent('content2')"><i class="ti-bag"></i>Sản phẩm</a></li>
+              <li><a href="#" onclick="changeContent('content3')"><i class="ti-package"></i>Đơn hàng</a></li>
+              <li><a href="#" onclick="changeContent('content4')"><i class="ti-user"></i>Khách hàng</a></li>
             
           </ul>
         <div class="divider"></div>
@@ -52,8 +54,8 @@
 
 
 
-    <!-- Main Content -->
-    <main class="content">
+    <!-- Main Content  trang chủ -->
+    <div id="content1"  class="content active">
 
         <div class="dashboard">
             <!-- Doanh thu -->
@@ -85,13 +87,6 @@
             </div>
 
         </div>
-    
-
-
-
-
-
-
       <header>
         <h1>Danh sách nhân viên</h1>
         <button class="add-button">Thêm nhân viên</button>
@@ -211,13 +206,33 @@
           </tbody>
         </table>
       </section>
-    </main>
+
+    </div>
+
+    <!-- Main Content sản phẩm  -->
+
+   <div id="content2"class="content">
+    <h2>trang sp</h2>
   </div>
 
 
 
+    <!-- Main Content  đơn hàng -->
 
-   <script src="main.js"></script>
+<div id="content3" class="content">
+    <h2>trang đơn hàng</h2>
+  </div>
+     <!-- Main Content khách hàng -->
+
+     <div id="content4" class="content">
+      <h2>trang khách hàng</h2>
+    </div>
+
+  </div>
+
+   
+  <script src="main.js" ></script>
+  
 </body>
 </html>
 

@@ -1063,7 +1063,6 @@ h2 {
     left: -250px; /* Ẩn sidebar ban đầu */
     height: 100%; /* Chiều cao toàn màn hình */
     transition: left 0.3s ease-in-out; /* Hiệu ứng trượt */
-    z-index: 1000px; /* Đặt trên các phần tử khác */
     padding: 20px ;
     text-align: center;
 }
@@ -1121,7 +1120,7 @@ ul li a i {
     margin: 20px 0;
     text-align: center;
 }
-
+/*khung hình admin*/
 .profile-container {
     text-align: center;
     padding: 5px;
@@ -1146,7 +1145,7 @@ ul li a i {
     color: #333;
 }
 
-
+/* Cấu hình cho nội dung trang nhân viên */
 
 .dashboard {
     display: grid;
@@ -1196,20 +1195,19 @@ ul li a i {
 }
 
 
-/* Cấu hình cho nội dung chính */
 #admin-container {
     margin-left: 250px;
     padding: 10px;
 }
 
-.content header {
+ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
 }
 
-.content header h1 {
+ header h1 {
     font-size: 32px;
     color: #333;
 }
@@ -1301,4 +1299,16 @@ button.delete:hover {
         padding: 8px 16px;
     }
 
+}
+
+.content {
+    display: none;
+}
+.active {
+    display: block;
+}
+#admin-container {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
+    flex: 1;
 }

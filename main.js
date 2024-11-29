@@ -19,3 +19,33 @@ function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar'); // Lấy phần tử sidebar
     sidebar.classList.toggle('active'); // Thêm hoặc xóa class "active"
 }
+
+
+
+function changeContent(contentId) {
+    // Ẩn tất cả các phần nội dung
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    // Hiển thị phần nội dung được chọn
+    const selectedContent = document.getElementById(contentId);
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+    }
+}
+
+ function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const adminContainer = document.getElementById('admin-container');
+            const isSidebarVisible = sidebar.style.transform === 'translateX(0%)';
+
+            if (isSidebarVisible) {
+                sidebar.style.transform = 'translateX(-100%)';
+                adminContainer.style.marginLeft = '0';
+            } else {
+                sidebar.style.transform = 'translateX(0%)';
+                adminContainer.style.marginLeft = '250px';
+            }
+        }
