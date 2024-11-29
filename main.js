@@ -15,3 +15,7 @@ document.querySelectorAll('.thumbnail').forEach((thumbnail) => {
         changeImage(this.src); // Thay đổi hình ảnh chính dựa trên hình ảnh nhỏ được bấm
     });
 });
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar'); // Lấy phần tử sidebar
+    sidebar.classList.toggle('active'); // Thêm hoặc xóa class "active"
+}
