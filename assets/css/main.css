@@ -1038,17 +1038,19 @@ h2 {
 
 
 /*trang ADMIN*/
-/* Reset các thuộc tính mặc định */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Cấu hình font chữ chung */
-body {
-    background-color: #f4f6f9;
-    color: #333;
+/* Nút toggle */
+.sidebar-toggle {
+    position: fixed; /* Nút cố định */
+    background-color: #fff; /* Màu nền */
+    color: #2c3e50; /* Màu chữ */
+    border: 2px solid #2c3e50;
+    top: 2px; /* Cách mép trên 20px */
+    left: 2px; /* Cách mép phải 20px */
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1100; /* Đặt nút trên sidebar */
+    font-size: 20px; /* Kích thước chữ */
 }
 
 /* Cấu hình Sidebar */
@@ -1056,12 +1058,19 @@ body {
     width: 250px;
     background-color: #2a3d56;
     color: #fff;
-    height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
-    padding: 20px;
+    left: -250px; /* Ẩn sidebar ban đầu */
+    height: 100%; /* Chiều cao toàn màn hình */
+    transition: left 0.3s ease-in-out; /* Hiệu ứng trượt */
+    padding: 20px ;
+    text-align: center;
 }
+/* SIDEBAR HIỆN RA */
+.sidebar.active {
+    left: 0; /* Khi có class "active", sidebar hiện ra */
+}
+
 
 .sidebar h2 {
     text-align: center;
@@ -1072,17 +1081,25 @@ body {
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
+    width: 100%;
+    
 }
 
 .sidebar ul li i{
     margin-bottom: 20px;
+}
+.sidebar ul li {
+    margin: 10px 0; /* Khoảng cách giữa các mục */
+    text-align: center; /* Căn giữa text */
 }
 
 .sidebar ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
-    display: block;
+    display: flex;
+    justify-content: left;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -1101,11 +1118,13 @@ ul li a i {
     height: 2px;
     background-color: white;
     margin: 20px 0;
+    text-align: center;
 }
-
+/*khung hình admin*/
 .profile-container {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1115,7 +1134,7 @@ ul li a i {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #007bff;
+    border: none;
     margin-bottom: 10px;
 }
 
@@ -1126,7 +1145,7 @@ ul li a i {
     color: #333;
 }
 
-
+/* Cấu hình cho nội dung trang nhân viên */
 
 .dashboard {
     display: grid;
@@ -1165,22 +1184,40 @@ ul li a i {
     margin-top: 20px;
     font-size: 16px;
 }
+/* Màn hình lớn: Sidebar luôn hiển thị, không ảnh hưởng đến nội dung chính */
+@media (min-width: 768px) {
+    .sidebar {
+        left: 0; /* Sidebar cố định */
+    }
 
+    .sidebar-toggle {
+        display: none; /* Ẩn nút toggle trên màn hình lớn */
+    }
 
-/* Cấu hình cho nội dung chính */
+    #admin-container {
+        margin-left: 250px; /* Đẩy nội dung chính sang phải khi sidebar hiển thị */
+    }
+}
+
+/* Màn hình nhỏ: Nội dung chính không bị đẩy sang phải */
+@media (max-width: 767px) {
+    #admin-container {
+        margin-left: 0; /* Không có margin-left khi sidebar ẩn */
+    }
+}
 #admin-container {
-    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
     padding: 10px;
 }
 
-.content header {
+ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
-.content header h1 {
+ header h1 {
     font-size: 32px;
     color: #333;
 }
@@ -1215,7 +1252,7 @@ table thead {
 
 table th, table td {
     font-size: 14px;
-    padding: 10px;
+    padding:10px 5px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -1229,7 +1266,8 @@ table tr:hover {
 }
 
 button.edit, button.delete {
-    padding: 5px 10px;
+    margin: 3px;
+    padding: 5px 5px;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
@@ -1270,4 +1308,12 @@ button.delete:hover {
         font-size: 14px;
         padding: 8px 16px;
     }
+
+}
+
+.content {
+    display: none;
+}
+.active {
+    display: block;
 }
