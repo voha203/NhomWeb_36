@@ -1184,19 +1184,29 @@ ul li a i {
     margin-top: 20px;
     font-size: 16px;
 }
+/* Màn hình lớn: Sidebar luôn hiển thị, không ảnh hưởng đến nội dung chính */
 @media (min-width: 768px) {
     .sidebar {
-        left: 0; /* Hiển thị sidebar khi màn hình lớn */
+        left: 0; /* Sidebar cố định */
     }
 
     .sidebar-toggle {
         display: none; /* Ẩn nút toggle trên màn hình lớn */
     }
+
+    #admin-container {
+        margin-left: 250px; /* Đẩy nội dung chính sang phải khi sidebar hiển thị */
+    }
 }
 
-
+/* Màn hình nhỏ: Nội dung chính không bị đẩy sang phải */
+@media (max-width: 767px) {
+    #admin-container {
+        margin-left: 0; /* Không có margin-left khi sidebar ẩn */
+    }
+}
 #admin-container {
-    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
     padding: 10px;
 }
 
@@ -1306,9 +1316,4 @@ button.delete:hover {
 }
 .active {
     display: block;
-}
-#admin-container {
-    margin-left: 250px;
-    transition: margin-left 0.3s ease-in-out;
-    flex: 1;
 }

@@ -15,11 +15,6 @@ document.querySelectorAll('.thumbnail').forEach((thumbnail) => {
         changeImage(this.src); // Thay đổi hình ảnh chính dựa trên hình ảnh nhỏ được bấm
     });
 });
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar'); // Lấy phần tử sidebar
-    sidebar.classList.toggle('active'); // Thêm hoặc xóa class "active"
-}
-
 
 
 function changeContent(contentId) {
@@ -36,16 +31,18 @@ function changeContent(contentId) {
     }
 }
 
- function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            const adminContainer = document.getElementById('admin-container');
-            const isSidebarVisible = sidebar.style.transform === 'translateX(0%)';
+ // Toggle Sidebar
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const adminContainer = document.getElementById('admin-container');
 
-            if (isSidebarVisible) {
-                sidebar.style.transform = 'translateX(-100%)';
-                adminContainer.style.marginLeft = '0';
-            } else {
-                sidebar.style.transform = 'translateX(0%)';
-                adminContainer.style.marginLeft = '250px';
-            }
-        }
+    if (sidebar.classList.contains('active')) {
+        // Nếu Sidebar đang hiện
+        sidebar.classList.remove('active'); // Ẩn Sidebar
+        adminContainer.style.marginLeft = '0'; // Đưa nội dung chính về toàn màn hình
+    } else {
+        // Nếu Sidebar đang ẩn
+        sidebar.classList.add('active'); // Hiện Sidebar
+        adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
+    }
+}
