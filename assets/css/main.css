@@ -487,7 +487,6 @@
     text-align: center;
     transition: box-shadow 0.3s ease;
 }
-
 .product:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -509,30 +508,41 @@
     font-weight: bold;
     color: #333;
 }
-
-.view-all {
-    margin: 20px;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
+/* Liên kết bao sản phẩm */
+.product-link {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit; /* Giữ nguyên màu chữ */
+    display: block; /* Bao phủ toàn sản phẩm */
 }
 
-.view-all::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: black;
-    position: absolute;
-    left: 0;
-    bottom: -4px;
+/* Khi di chuột qua sản phẩm */
+.product-link:hover .product {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03); /* Phóng to nhẹ */
 }
 
+
+/* nút xem tất cả */
 .view-all-container {
-    text-align: center;
+    text-align: center; /* Canh giữa nội dung */
+    margin: 20px 0;
 }
+
+/* Nút XEM TẤT CẢ */
+.view-all {
+    display: inline-block; /* Hiển thị như một khối */
+    padding: 12px 20px; /* Khoảng cách bên trong nút */
+    font-size: 18px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    color: #000; /* Màu chữ đen */
+    background-color: #fff; /* Màu nền trắng */
+    border: 2px solid #000; /* Viền màu đen */
+    border-radius: 8px; /* Góc bo tròn */
+    text-decoration: none; /* Bỏ gạch chân */
+    cursor: pointer; /* Hiển thị con trỏ dạng pointer */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
 
 @media (max-width: 1200px) {
     .product-grid {
@@ -842,7 +852,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #333;
+    background-color: #325fc6;
     border-radius: 50%;
     margin-left: 5px;
 }
@@ -928,7 +938,7 @@
 }
 
 /* Tiêu đề chính trong khung */
-.title_ct {
+.title_tdc {
     font-size: 24px;
     font-weight: normal;
     text-align: center;
@@ -975,6 +985,7 @@
 
 }
 
+
 .footer {
     color: #fff;
     padding: 20px 2px;
@@ -1004,19 +1015,58 @@
     margin-bottom: 5px;
     font-size: 14px;
 }
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
+.email-box {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 5px;
+.email-box input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+   
 }
+
+.email-box button {
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.email-box button:hover {
+    background-color: #004494;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons a img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+
+
 
 
 /*trang đăng nhập*/
-#container_dn {
+
     display: flex; /* Dùng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa ngang */
     align-items: center; /* Căn giữa dọc */
@@ -1026,7 +1076,7 @@
     position: relative;
 }
 
-.login-container {
+.login-container, .register-container {
     width: 400px;
     background: #ffffff;
     padding: 20px 30px;
@@ -1041,7 +1091,7 @@ h2 {
     color: #333;
 }
 
-.login-form label {
+.login-form label, .register-form label {
     display: block;
     text-align: left;
     margin-bottom: 5px;
@@ -1049,11 +1099,11 @@ h2 {
     color: #333;
 }
 
-.login-form label span {
+.login-form label span, .register-form label span {
     color: red;
 }
 
-.login-form input {
+.login-form input, .register-form input  {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -1149,6 +1199,31 @@ h2 {
 .support-info strong {
     color: #333;
 }
+/*dang ky*/
+.register-form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.btn-register {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.btn-register:hover {
+    background-color: #45a049;
+}
+
 
 /*trang quen mk*/
 /* Container cha */
