@@ -160,7 +160,7 @@ ul li a i {
     #admin-container {
         margin-left: 250px; /* Đẩy nội dung chính sang phải khi sidebar hiển thị */
     }
-}
+
 
 /* Màn hình nhỏ: Nội dung chính không bị đẩy sang phải */
 @media (max-width: 767px) {

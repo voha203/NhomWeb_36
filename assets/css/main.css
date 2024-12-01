@@ -1012,8 +1012,19 @@
 
 .footer-section h3 {
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.footer-section ul li {
+    margin-left: 0; 
+    padding: 5px 0; 
 }
 .email-box {
     display: flex;
@@ -1066,7 +1077,7 @@
 
 
 /*trang đăng nhập*/
-
+.container_dn{
     display: flex; /* Dùng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa ngang */
     align-items: center; /* Căn giữa dọc */
