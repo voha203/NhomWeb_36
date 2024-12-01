@@ -728,6 +728,8 @@
    padding-left: 5px;
         
 }
+
+/* FOOTER*/
 .footer {
     color: #fff;
     padding: 20px 2px;
@@ -757,15 +759,54 @@
     margin-bottom: 5px;
     font-size: 14px;
 }
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
+.email-box {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 5px;
+.email-box input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+   
 }
+
+.email-box button {
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.email-box button:hover {
+    background-color: #004494;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons a img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+
+
 
 
 /*trang đăng nhập*/
