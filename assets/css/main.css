@@ -1077,7 +1077,7 @@
 
 
 /*trang đăng nhập*/
-.container_dn{
+#container_dn{
     display: flex; /* Dùng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa ngang */
     align-items: center; /* Căn giữa dọc */
