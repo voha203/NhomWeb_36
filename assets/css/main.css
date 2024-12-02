@@ -1077,7 +1077,7 @@
 
 
 /*trang đăng nhập*/
-.container_dn{
+#container_dn, #container_dk{
     display: flex; /* Dùng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa ngang */
     align-items: center; /* Căn giữa dọc */
@@ -1332,15 +1332,15 @@ h2 {
 }
 
 /* Link quay lại */
-.back-to-login {
+.back-to-login ,.back-to-trangchu{
     display: block;
-    margin-top: 20px;
+    margin-top: 20px 15px;
     font-size: 14px;
     color: #007bff;
     text-decoration: none;
 }
 
-.back-to-login:hover {
+.back-to-login:hover , .back-to-trangchu:hover{
     text-decoration: underline;
 }
 
