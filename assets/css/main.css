@@ -153,8 +153,8 @@
     animation: headerNotifyGrowth ease-in 0.3s;
     will-change: animation, opacity;
     display: none;
+    z-index: 10;
 }
-
 .header__notify::before {
     content: "";
     border-width: 20px 25px;
@@ -256,6 +256,7 @@
 
 /*phần tìm kiếm*/
 .header-with-search {
+    z-index: 5;
     height: var(--header-with-search-height);
     display: flex;
     align-items: center;
