@@ -1418,7 +1418,7 @@ h2 {
 
 
 /* Phần giữa trang thông báo */
-/*.notification-container {
+.notification-container {
     background-color: #f8f9fa;
     padding: 30px;
     border-radius: 10px;
@@ -1427,7 +1427,7 @@ h2 {
     margin: 30px auto;
 }
 
-!* Tiêu đề thông báo *!
+/* Tiêu đề thông báo */
 .notification-header {
     text-align: center;
     margin-bottom: 20px;
@@ -1439,7 +1439,7 @@ h2 {
     font-weight: bold;
 }
 
-!* Phần thông báo *!
+/* Phần thông báo */
 .notification-body {
     margin-top: 20px;
 }
@@ -1464,7 +1464,7 @@ h2 {
     line-height: 1.6;
 }
 
-!* Thêm màu nền cho thông báo quan trọng *!
+/* Thêm màu nền cho thông báo quan trọng */
 .announcement.important {
     background-color: #ffe6e6;
     border-left: 5px solid #ff4d4d;
@@ -1476,7 +1476,7 @@ h2 {
 
 .announcement.important p {
     color: #333;
-}*/
+}
 
 
 
