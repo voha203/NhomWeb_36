@@ -194,6 +194,7 @@ ul li a i {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .add-button:hover {
@@ -207,6 +208,7 @@ table {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 table thead {
@@ -285,4 +287,25 @@ button.delete:hover {
     margin-left: 250px;
     transition: margin-left 0.3s ease-in-out;
     flex: 1;
+}
+
+/* Popup form */
+label {
+    display: inline-block; 
+    width: 150px; 
+    font-weight: none;
+    font-size: 14px;
+}
+
+/* Input styling */
+input {
+    width: calc(100% - 320px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius:8px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 15px;
 }

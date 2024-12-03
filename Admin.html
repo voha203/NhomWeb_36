@@ -90,7 +90,6 @@
         </div>
       <header>
         <h1>Danh sách nhân viên</h1>
-        <button class="add-button">Thêm nhân viên</button>
       </header>
       <section>
         <table>
@@ -207,6 +206,51 @@
           </tbody>
         </table>
       </section>
+      <div class="form-popup" id="customerForm">
+        <form id="customerFormContent">
+          <button class="add-button">Thêm nhân viên</button>
+          <div class="form-group">
+            <label for="name">Tên nhân viên:</label>
+            <input type="text" id="name" placeholder="Nhập tên nhân viên">
+        </div>
+        <div class="form-group">
+          <label for="address">Địa chỉ:</label>
+          <input type="text" id="address" placeholder="Nhập địa chỉ">
+      </div>
+    
+        <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" placeholder="Nhập số điện thoại">
+        </div>
+    
+        <div class="form-group">
+            <label for="tdn">Tên đăng nhập</label>:</label>
+            <input type="tdm" id="tdm" placeholder="Nhập tên đăng nhập">
+        </div>
+        <div class="form-group">
+          <label for="mk">Mật khẩu</label>:</label>
+          <input type="mk" id="mk" placeholder="Nhập mật khẩu">
+      </div>
+    
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Nhập email">
+      </div>
+      <div class="form-group">
+        <label for="quyen">Quyền:</label>
+        <input type="quyen" id="quyen" placeholder="Nhập quyền">
+    </div>
+    <div class="form-group">
+      <label for="tt">Trạng thái:</label>
+      <input type="tt" id="tt" placeholder="Nhập trạng thái">
+  </div>
+        <div class="form-group">
+          <button class="add-button">Lưu</button>
+          <button class="add-button">Xóa</button>
+      </div>
+        </form>
+    </div>
 
     </div>
 
@@ -215,7 +259,6 @@
    <div id="content2" class="content">
     <header>
       <h1>Danh sách sản phẩm</h1>
-      <button class="add-button">Thêm sản phẩm</button>
     </header>
     <section>
       <table>
@@ -317,6 +360,42 @@
         </tbody>
       </table>
     </section>
+    <div class="form-popup" id="customerForm">
+      <form id="customerFormContent">
+        <button class="add-button">Thêm sản phẩm</button>
+        <div class="form-group">
+          <label for="name">Tên sản phẩm:</label>
+          <input type="text" id="name" placeholder="Nhập tên sản phẩm">
+      </div>
+  
+      <div class="form-group">
+          <label for="image">Hình ảnh:</label>
+          <input type="text" id="image" placeholder="Nhập link hình ảnh">
+      </div>
+  
+      <div class="form-group">
+          <label for="mt">Mô tả</label>:</label>
+          <input type="mtl" id="mt" placeholder="Nhập mô tả">
+      </div>
+  
+      <div class="form-group">
+          <label for="sl">Số lượng:</label>
+          <input type="text" id="sl" placeholder="Nhập số lượng">
+      </div>
+      <div class="form-group">
+        <label for="gia">Giá tiền:</label>
+        <input type="text" id="gia" placeholder="Nhập giá tiền">
+    </div>
+    <div class="form-group">
+      <label for="address">Ngày nhập kho:</label>
+      <input type="text" id="address" placeholder="Nhập ngày nhập kho">
+  </div>
+      <div class="form-group">
+        <button class="add-button">Lưu</button>
+        <button class="add-button">Xóa</button>
+    </div>
+      </form>
+  </div>
   </div>
 
 
@@ -326,7 +405,6 @@
       <div id="content3" class="content">
     <header>
       <h1>Danh sách đơn hàng </h1>
-      <button class="add-button">Thêm đơn hàng</button>
     </header>
     <section>
       <table>
@@ -337,6 +415,7 @@
             <th>Số điện thoại</th>
             <th>Ngày cập nhật</th>
             <th>Địa chỉ nhận hàng</th>
+            <th>Tổng số tiền</th>
             <th>Trạng thái đơn hàng</th>
             <th>Chỉnh sửa</th>
           </tr>
@@ -348,6 +427,7 @@
             <td> 0989767654</td>
             <td>23/9/2024</td>
             <td>24/7 đường số 7</td>
+            <th>400.000 đ</th>
             <td>Đã xử lý</td>
             <td>
               <button class="edit">Sửa</button>
@@ -361,6 +441,7 @@
             <td> 0987897897</td>
             <td>25/9/2024</td>
             <td>24/6 đường số 5</td>
+            <th>400.000 đ</th>
             <td>Đang chuẩn bị</td>
             <td>
               <button class="edit">Sửa</button>
@@ -371,6 +452,42 @@
         </tbody>
       </table>
     </section>
+    <div class="form-popup" id="customerForm">
+      <form id="customerFormContent">
+        <button class="add-button">Thêm đơn hàng</button>
+        <div class="form-group">
+          <label for="name">Tên khách hàng:</label>
+          <input type="text" id="name" placeholder="Nhập tên khách hàng">
+      </div>
+  
+      <div class="form-group">
+          <label for="phone">Số điện thoại:</label>
+          <input type="text" id="phone" placeholder="Nhập số điện thoại">
+      </div>
+  
+      <div class="form-group">
+          <label for="email">Ngày cập nhật</label>:</label>
+          <input type="email" id="email" placeholder="Nhập ngày cập nhật">
+      </div>
+  
+      <div class="form-group">
+          <label for="address">Địa chỉ nhận hàng:</label>
+          <input type="text" id="address" placeholder="Nhập địa chỉ">
+      </div>
+      <div class="form-group">
+        <label for="address">Tổng số tiền:</label>
+        <input type="text" id="address" placeholder="Nhập tổng số tiền">
+    </div>
+    <div class="form-group">
+      <label for="address">Trạng thái đơn hàng:</label>
+      <input type="text" id="address" placeholder="Nhập trạng thái đơn hàng">
+  </div>
+      <div class="form-group">
+        <button class="add-button">Lưu</button>
+        <button class="add-button">Xóa</button>
+    </div>
+      </form>
+  </div>
   </div>
 
      <!-- Main Content khách hàng -->
@@ -378,7 +495,6 @@
       <div id="content4" class="content">
         <header>
           <h1>Danh sách khách hàng</h1>
-          <button class="add-button">Thêm khách hàng</button>
         </header>
         <section>
           <table>
@@ -420,7 +536,38 @@
             </tbody>
           </table>
         </section>
+
+        <div class="form-popup" id="customerForm">
+          <form id="customerFormContent">
+            <button class="add-button">Thêm khách hàng</button>
+            <div class="form-group">
+              <label for="name">Tên khách hàng:</label>
+              <input type="text" id="name" placeholder="Nhập tên khách hàng">
+          </div>
+      
+          <div class="form-group">
+              <label for="phone">Số điện thoại:</label>
+              <input type="text" id="phone" placeholder="Nhập số điện thoại">
+          </div>
+      
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" placeholder="Nhập email">
+          </div>
+      
+          <div class="form-group">
+              <label for="address">Địa chỉ nhận hàng:</label>
+              <input type="text" id="address" placeholder="Nhập địa chỉ">
+          </div>
+          <div class="form-group">
+            <button class="add-button">Lưu</button>
+            <button class="add-button">Xóa</button>
+        </div>
+          </form>
       </div>
+      </div>
+
+
 
   </div>
 
