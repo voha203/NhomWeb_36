@@ -1,12 +1,11 @@
-/*
 .cart {
     padding: 100px 0;
 }
 
 .cart-content {
-    display: flex; !* Kích hoạt Flexbox *!
-    justify-content: space-between; !* Tạo khoảng cách đều giữa hai bên *!
-    align-items: flex-start; !* Căn trên cùng *!
+    display: flex; /* Kích hoạt Flexbox */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa hai bên */
+    align-items: flex-start; /* Căn trên cùng */
 }
 
 .cart-top-wrap {
@@ -356,7 +355,7 @@ width: calc(50% - 12px);
 .delivery-content-right table tr td:first-child {
     text-align: left;
 }
-!*PAYMENT*!
+/*PAYMENT*/
 .payment {
     justify-content: center;
     align-items: center;
@@ -397,7 +396,6 @@ width: calc(50% - 12px);
 }
 .payment-content-left {
     width: 60%;
-
 }
 .payment-content-right {
     width: 40%;
@@ -451,4 +449,3 @@ width: calc(50% - 12px);
     border: 2px solid #000000;
 }
 
-*/
