@@ -1,11 +1,12 @@
+/*
 .cart {
     padding: 100px 0;
 }
 
 .cart-content {
-    display: flex; /* Kích hoạt Flexbox */
-    justify-content: space-between; /* Tạo khoảng cách đều giữa hai bên */
-    align-items: flex-start; /* Căn trên cùng */
+    display: flex; !* Kích hoạt Flexbox *!
+    justify-content: space-between; !* Tạo khoảng cách đều giữa hai bên *!
+    align-items: flex-start; !* Căn trên cùng *!
 }
 
 .cart-top-wrap {
@@ -355,3 +356,99 @@ width: calc(50% - 12px);
 .delivery-content-right table tr td:first-child {
     text-align: left;
 }
+!*PAYMENT*!
+.payment {
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-top-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-top {
+    height: 2px;
+    width: 70%;
+    background-color: #aaaaaa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 100px;
+}
+
+.payment-top-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.payment-top-item i {
+    color: #ddd;
+}
+
+.payment-top-payment {
+    border: 1px solid #007bff
+}
+.payment-content-left {
+    width: 60%;
+
+}
+.payment-content-right {
+    width: 40%;
+    border-left: 2px solid #dddddd;
+    padding-left: 12px;
+}
+.payment-content-left p,label{
+    font-family: var(--main-text-font);
+    font-size: 12px;
+}
+.payment-content-right-button {
+    display: flex;
+    padding: 12px 0;
+    border: 1px dashed #ddd;
+}
+.payment-content-right-button input{
+    height: 30px;
+    width: 200px;
+    margin-right: 100px;
+    padding-left: 12px;
+}
+.payment-content-right-button button {
+    height: 30px;
+    width: 100px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.payment-content-right-mnv {
+    margin-top: 20px;
+}
+.payment-content-right-mnv select{
+    height: 30px;
+    width: 100%;
+    color: #75758A;
+    padding-left: 12px;
+}
+.payment-content-right-payment {
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
+}
+.payment-content-right-payment button {
+    height: 35px;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #000000;
+}
+
+*/
