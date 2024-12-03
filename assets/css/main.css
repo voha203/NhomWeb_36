@@ -70,13 +70,11 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-.header_navbar-item.strong {
+.header_navbar-item.strong a,
+.header_navbar-item.f a {
     font-weight: 400;
-}
-
-.header_navbar-item.f {
-    font-weight: 400;
-
+    text-decoration: none;
+    color: inherit;
 }
 
 .header_navbar-item.strong::after {
