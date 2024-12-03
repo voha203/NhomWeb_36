@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Trợ giúp</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/font_Icon/themify-icons-font/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;500;700&display=swap">
 </head>
 <body>
-<section class="banner">
-  <h1>Chào mừng đến với Shop Bán Balo</h1>
-  <p>Khám phá các mẫu balo mới nhất và ưu đãi đặc biệt!</p>
+<section id="help" class="help-section">
+<div class="container">
+  <h2 class="section-title">Trợ giúp khách hàng</h2>
+  <p class="section-desc">Chúng tôi sẵn sàng hỗ trợ bạn với mọi thắc mắc liên quan đến sản phẩm và dịch vụ.</p>
+
+  <div class="faq">
+    <div class="faq-item">
+      <h3 class="faq-question">1. Làm thế nào để đặt hàng?</h3>
+      <p class="faq-answer">Bạn có thể đặt hàng trực tiếp trên website hoặc liên hệ qua hotline của chúng tôi.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">2. Phương thức thanh toán?</h3>
+      <p class="faq-answer">Chúng tôi hỗ trợ thanh toán qua chuyển khoản, thẻ tín dụng, và thanh toán khi nhận hàng.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">3. Chính sách đổi trả hàng?</h3>
+      <p class="faq-answer">Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu sản phẩm lỗi do nhà sản xuất.</p>
+    </div>
+  </div>
+</div>
 </section>
 
-<!-- Sản phẩm -->
-<section class="products">
-  <h2>Sản phẩm nổi bật</h2>
-  <div class="product-list">
-    <div class="product-item">
-      <img src="images/balo1.jpg" alt="Balo 1">
-      <h3>Balo Thời Trang</h3>
-      <p>Giá: 500,000 VNĐ</p>
-      <button>Mua ngay</button>
-    </div>
-    <div class="product-item">
-      <img src="images/balo2.jpg" alt="Balo 2">
-      <h3>Balo Công Sở</h3>
-      <p>Giá: 650,000 VNĐ</p>
-      <button>Mua ngay</button>
-    </div>
-    <div class="product-item">
-      <img src="images/balo3.jpg" alt="Balo 3">
-      <h3>Balo Du Lịch</h3>
-      <p>Giá: 700,000 VNĐ</p>
-      <button>Mua ngay</button>
-    </div>
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Liên hệ chúng tôi</h2>
+    <form class="contact-form">
+      <label for="name">Họ và tên</label>
+      <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Nhập email" required>
+
+      <label for="message">Nội dung</label>
+      <textarea id="message" name="message" placeholder="Nhập nội dung" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Gửi</button>
+    </form>
   </div>
 </section>
 </body>
