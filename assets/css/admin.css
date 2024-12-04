@@ -2,16 +2,16 @@
 
 /* Nút toggle */
 .sidebar-toggle {
-    position: fixed; /* Nút cố định */
-    background-color: #fff; /* Màu nền */
-    color: #2c3e50; /* Màu chữ */
+    position: fixed; 
+    background-color: #fff; 
+    color: #2c3e50; 
     border: 2px solid #2c3e50;
-    top: 2px; /* Cách mép trên 20px */
-    left: 2px; /* Cách mép phải 20px */
+    top: 2px;
+    left: 2px; 
     border-radius: 8px;
     cursor: pointer;
-    z-index: 1100; /* Đặt nút trên sidebar */
-    font-size: 20px; /* Kích thước chữ */
+    z-index: 1100; 
+    font-size: 20px; 
 }
 
 /* Cấu hình Sidebar */
@@ -21,15 +21,15 @@
     color: #fff;
     position: fixed;
     top: 0;
-    left: -250px; /* Ẩn sidebar ban đầu */
-    height: 100%; /* Chiều cao toàn màn hình */
-    transition: left 0.3s ease-in-out; /* Hiệu ứng trượt */
+    left: -250px; 
+    height: 100%; 
+    transition: left 0.3s ease-in-out; 
     padding: 20px ;
     text-align: center;
 }
 /* SIDEBAR HIỆN RA */
 .sidebar.active {
-    left: 0; /* Khi có class "active", sidebar hiện ra */
+    left: 0; 
 }
 
 
@@ -51,8 +51,8 @@
     margin-bottom: 20px;
 }
 .sidebar ul li {
-    margin: 10px 0; /* Khoảng cách giữa các mục */
-    text-align: center; /* Căn giữa text */
+    margin: 10px 0; 
+    text-align: center;
 }
 
 .sidebar ul li a {
@@ -66,7 +66,7 @@
     transition: background-color 0.3s ease;
 }
 ul li a i {
-    margin-right: 10px; /* Khoảng cách giữa icon và text */
+    margin-right: 10px; 
     font-size: 20px;
 }
 
@@ -148,17 +148,17 @@ ul li a i {
 /* Màn hình lớn: Sidebar luôn hiển thị, không ảnh hưởng đến nội dung chính */
 @media (min-width: 768px) {
     .sidebar {
-        left: 0; /* Hiển thị sidebar khi màn hình lớn */
-        left: 0; /* Sidebar cố định */
+        left: 0; 
+        left: 0;
     }
 
     .sidebar-toggle {
-        display: none; /* Ẩn nút toggle trên màn hình lớn */
+        display: none; 
     }
 }
 
     #admin-container {
-        margin-left: 250px; /* Đẩy nội dung chính sang phải khi sidebar hiển thị */
+        margin-left: 250px; 
     }
 
 
