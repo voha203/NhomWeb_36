@@ -196,10 +196,6 @@
     padding-left: 0;
 }
 
-.header__notify-item {
-
-}
-
 .header__notify-item:hover {
     background-color: #999;
 }
@@ -246,13 +242,18 @@
 }
 
 .header__notify-footer-bnt {
+    /*
     text-decoration: none;
+    */
     color: var(--text-color);
     padding: 6px 6px;
     margin: auto;
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
+}
+.header__notify-footer-bnt:hover {
+    color: #999999;
 }
 
 /*phần tìm kiếm*/
@@ -476,6 +477,7 @@
     margin: 20px auto;
     padding: 0 20px;
 }
+
 .section-title {
     font-size: 28px;
     margin-bottom: 10px;
