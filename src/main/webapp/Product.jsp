@@ -1,3 +1,5 @@
+<%@ page import="model.*" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +24,21 @@
         <div class="product-grid">
             <%
                 List<Product> products = (List<Product>) request.getAttribute("products");
-                for (Product product : products) {
+                if (products != null) {  // Kiểm tra xem products có null không
+                    for (Product product : products) {
             %>
             <div class="product">
-                <img src="<%= product.getImageUrl() %>" alt="<%= product.getProductName() %>">
+                <img src="<%= product.getImage() != null ? product.getImage().getImageUrl() : "images/1144.jpg" %>" alt="<%= product.getProductName() %>">
+
                 <p class="product-name"><%= product.getProductName() %></p>
                 <p class="price"><%= product.getPrice() %> đ</p>
             </div>
-            <% } %>
+            <%
+                    }
+                } else {
+                    out.println("Không có sản phẩm nào để hiển thị.");
+                }
+            %>
         </div>
     </div>
 

@@ -1,15 +1,22 @@
 import dao.DatabaseConnection;
-import controller.UserController;
-import dao.UserDao;
-import view.UserView;
+import controller.*;
+import dao.*;
+import model.Product;
+import view.*;
 
 public class main {
     public static void main(String[] args) {
-        DatabaseConnection.testConnection();
-        UserDao userDAO = new UserDao();
-        UserView userView = new UserView();
-        UserController userController = new UserController(userDAO, userView);
 
-        userController.displayAllUsers();
+
+//        UserDao userDAO = new UserDao();
+//        UserView userView = new UserView();
+//        UserController userController = new UserController(userDAO, userView);
+//        userController.displayAllUsers();
+        ProductDAO productDAO = new ProductDAO();
+        ProductView productView = new ProductView();
+        ProductController productController = new ProductController(productDAO, productView);
+        productController.displayAllProducts();
+
+
     }
 }

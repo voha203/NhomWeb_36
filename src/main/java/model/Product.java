@@ -1,15 +1,17 @@
 package model;
 
+import java.math.BigDecimal;
+
 public class Product {
     private int productId;
     private String productName;
     private String description;
-    private double price;
+    private BigDecimal price;
     private int stock;
     private Category category;
     private Image image;
 
-    public Product(int productId, String productName, String description, double price, int stock, Category category, Image image) {
+    public Product(int productId, String productName, String description, BigDecimal price, int stock, Category category, Image image) {
         this.productId = productId;
         this.productName = productName;
         this.description = description;
@@ -18,7 +20,8 @@ public class Product {
         this.category = category;
         this.image = image;
     }
-
+    public Product() {
+    }
     public int getProductId() {
         return productId;
     }
@@ -43,11 +46,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -73,6 +76,11 @@ public class Product {
 
     public void setImage(Image image) {
         this.image = image;
+    }
+    @Override
+    public String toString() {
+
+        return "Product [productId=" + productId + ", productName=" + productName + ", description=" + description  ;
     }
 }
 
