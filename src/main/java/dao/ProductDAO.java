@@ -20,20 +20,10 @@ public class ProductDAO {
 
             while (rs.next()) {
                 Product product = new Product();
-                product.setProductId(rs.getInt("product_id"));
-                product.setProductName(rs.getString("product_name"));
-                product.setDescription(rs.getString("description"));
+                product.setProduct_id(rs.getInt("product_id"));
+                product.setProduct_name(rs.getString("product_name"));
                 product.setPrice(rs.getDouble("price"));
-                product.setStock(rs.getInt("stock"));
-
-                // Xử lý link của sản phẩm
-                product.setLink(rs.getString("link"));
-
-                // Nếu bảng có thông tin về hình ảnh, bạn có thể tạo đối tượng Image và gán cho sản phẩm
-                // Giả sử bạn có cột 'image_id' và 'image_url' trong bảng 'products' để lưu thông tin hình ảnh
-                String imageUrl = rs.getString("image_url"); // giả sử có cột 'image_url' trong bảng products
-                Image image = new Image(rs.getInt("image_id"), imageUrl); // Tạo đối tượng Image
-                product.setImage(image); // Gán hình ảnh vào sản phẩm
+                product.setImage_url(rs.getString("image_url"));
 
                 productList.add(product);
             }

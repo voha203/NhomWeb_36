@@ -1,93 +1,66 @@
 package model;
 
+
 public class Product {
     private int product_id;
     private String product_name;
-    private String description;
     private double price;
-    private int stock;
-    private Image image;
-    private String link;
+    private String image_url;
 
         // Constructor có tham số
-        public Product(int product_id, String product_name, String description, double price, int stock, Image image, String link) {
+        public Product(int product_id, String product_name, double price, String image_url) {
             this.product_id = product_id;
             this.product_name = product_name;
-            this.description = description;
             this.price = price;
-            this.stock = stock;
-            this.image = image;
-            this.link = link;
+            this.image_url = image_url;
         }
-
         // Constructor mặc định
         public Product() {
         }
 
-        // Getter và Setter cho các thuộc tính
-        public int getProductId() {
-            return product_id;
-        }
-
-        public void setProductId(int product_id) {
-            this.product_id = product_id;
-        }
-
-        public String getProductName() {
-            return product_name;
-        }
-
-        public void setProductName(String product_name) {
-            this.product_name = product_name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
-            this.price = price;
-        }
-
-        public int getStock() {
-            return stock;
-        }
-
-        public void setStock(int stock) {
-            this.stock = stock;
-        }
-
-        public Image getImage() {
-            return image;
-        }
-
-        public void setImage(Image image) {
-            this.image = image;
-        }
-        public String getLink() {
-        return link;
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
-        // Phương thức toString để hiển thị thông tin sản phẩm
-        @Override
-        public String toString() {
-            return "Product [product_id=" + product_id + ", product_name=" + product_name + ", description=" + description
-                    + ", price=" + price + ", stock=" + stock + ", image=" + image +", link=" + link + "]";
-        }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "product_id=" + product_id +
+                ", product_name='" + product_name + '\'' +
+                ", price=" + price +
+                ", image_url='" + image_url + '\'' +
+                '}';
+    }
 
     public static void main(String[] args) {
-
     }
     }
 
