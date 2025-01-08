@@ -1,28 +1,28 @@
 package model;
 
 public class Image {
-    private int imageId;
-    private String imageUrl;
+    private int image_id;
+    private String image_url;
 
-    public Image(int imageId, String imageUrl) {
-        this.imageId = imageId;
-        this.imageUrl = imageUrl;
+    public Image(int image_id, String image_url) {
+        this.image_id = image_id;
+        this.image_url = image_url;
     }
 
     public int getImageId() {
-        return imageId;
+        return image_id;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setImageId(int image_id) {
+        this.image_id = image_id;
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageUrl(String image_url) {
+        this.image_url = image_url;
     }
 
 }

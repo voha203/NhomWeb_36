@@ -1,7 +1,8 @@
 package dao;
 
+import model.Image;
 import model.Product;
-import dao.DatabaseConnection;  // Nhập lớp DatabaseConnection
+import dao.DatabaseConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,24 +11,28 @@ public class ProductDAO {
 
     public List<Product> getAllProducts() {
         List<Product> productList = new ArrayList<>();
-        // Sử dụng DatabaseConnection để lấy kết nối
-        try (Connection connection = DatabaseConnection.getConnection();
-             Statement stmt = connection.createStatement()) {
 
-            String sql = "SELECT * FROM products";
-            ResultSet rs = stmt.executeQuery(sql);
+        String sql = "SELECT * FROM products";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+             ResultSet rs =preparedStatement.executeQuery();
 
             while (rs.next()) {
                 Product product = new Product();
-                product.setProductId(rs.getInt("product_id"));
+            product.setLink(rs.getString("link"));
+
                 product.setProductName(rs.getString("product_name"));
-                product.setDescription(rs.getString("description"));
-                product.setPrice(rs.getBigDecimal("price"));
-                product.setStock(rs.getInt("stock"));
+                product.setPrice(rs.getDouble("price"));
+
+                // Xử lý thông tin ảnh
+
+
                 productList.add(product);
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Log lỗi nếu kết nối không thành công
+            System.err.println("Error while fetching products: " + e.getMessage());
+            e.printStackTrace();
         }
         return productList;
     }

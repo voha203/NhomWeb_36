@@ -1,86 +1,93 @@
 package model;
 
-import java.math.BigDecimal;
-
 public class Product {
-    private int productId;
-    private String productName;
+    private int product_id;
+    private String product_name;
     private String description;
-    private BigDecimal price;
+    private double price;
     private int stock;
-    private Category category;
     private Image image;
+    private String link;
 
-    public Product(int productId, String productName, String description, BigDecimal price, int stock, Category category, Image image) {
-        this.productId = productId;
-        this.productName = productName;
-        this.description = description;
-        this.price = price;
-        this.stock = stock;
-        this.category = category;
-        this.image = image;
-    }
-    public Product() {
-    }
-    public int getProductId() {
-        return productId;
+        // Constructor có tham số
+        public Product(int product_id, String product_name, String description, double price, int stock, Image image, String link) {
+            this.product_id = product_id;
+            this.product_name = product_name;
+            this.description = description;
+            this.price = price;
+            this.stock = stock;
+            this.image = image;
+            this.link = link;
+        }
+
+        // Constructor mặc định
+        public Product() {
+        }
+
+        // Getter và Setter cho các thuộc tính
+        public int getProductId() {
+            return product_id;
+        }
+
+        public void setProductId(int product_id) {
+            this.product_id = product_id;
+        }
+
+        public String getProductName() {
+            return product_name;
+        }
+
+        public void setProductName(String product_name) {
+            this.product_name = product_name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        public int getStock() {
+            return stock;
+        }
+
+        public void setStock(int stock) {
+            this.stock = stock;
+        }
+
+        public Image getImage() {
+            return image;
+        }
+
+        public void setImage(Image image) {
+            this.image = image;
+        }
+        public String getLink() {
+        return link;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setLink(String link) {
+        this.link = link;
     }
+        // Phương thức toString để hiển thị thông tin sản phẩm
+        @Override
+        public String toString() {
+            return "Product [product_id=" + product_id + ", product_name=" + product_name + ", description=" + description
+                    + ", price=" + price + ", stock=" + stock + ", image=" + image +", link=" + link + "]";
+        }
 
-    public String getProductName() {
-        return productName;
-    }
+    public static void main(String[] args) {
 
-    public void setProductName(String productName) {
-        this.productName = productName;
     }
-
-    public String getDescription() {
-        return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
-    @Override
-    public String toString() {
-
-        return "Product [productId=" + productId + ", productName=" + productName + ", description=" + description  ;
-    }
-}
 
