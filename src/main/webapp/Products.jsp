@@ -1,9 +1,13 @@
-<%@ page import="model.*" %>
-<%@ page import="java.util.List" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 1/8/2025
+  Time: 3:09 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Product</title>
@@ -26,9 +30,9 @@
             <c:forEach var="product" items="${products}">
                 <div class="product">
                     <!-- Hiển thị ảnh sản phẩm -->
-                    <img src="${product.link}" alt="${product.productName}">I
+                    <img src="${product.image_url}" alt="${product.product_name}">
                     <!-- Hiển thị tên sản phẩm -->
-                    <p class="product-name">${product.productName}</p>
+                    <p class="product-name">${product.product_name}</p>
                     <!-- Hiển thị giá sản phẩm -->
                     <p class="price">${product.price} đ</p>
                 </div>

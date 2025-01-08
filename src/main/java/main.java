@@ -12,10 +12,10 @@ public class main {
 //       UserView userView = new UserView();
 //        UserController userController = new UserController(userDAO, userView);
 //       userController.displayAllUsers();
-   ProductDAO productDAO = new ProductDAO();
-     ProductView productView = new ProductView();
-     ProductController productController = new ProductController(productDAO, productView);
-     productController.displayAllProducts();
+  // ProductDAO productDAO = new ProductDAO();
+   //  ProductView productView = new ProductView();
+ //    ProductController productController = new ProductController(productDAO, productView);
+    // productController.displayAllProducts();
    // productDAO.getAllProducts();
 //        DatabaseConnection db = new DatabaseConnection();
 //        db.testConnection();
