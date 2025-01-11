@@ -20,12 +20,16 @@ public class ProductDAO {
 
             while (rs.next()) {
                 Product product = new Product();
-                product.setProduct_id(rs.getInt("product_id"));
-                product.setProduct_name(rs.getString("product_name"));
-                product.setPrice(rs.getDouble("price"));
-                product.setImage_url(rs.getString("image_url"));
+                product.setProduct_id(rs.getInt("product_id")); // Lấy giá trị product_id
+                product.setProduct_name(rs.getString("product_name")); // Lấy giá trị product_name
+                product.setDescription(rs.getString("description")); // Lấy giá trị description
+                product.setPrice(rs.getInt("price")); // Lấy giá trị price (kiểu int)
+                product.setStock(rs.getInt("stock")); // Lấy giá trị stock
+                product.setImage_url(rs.getString("image_url")); // Lấy giá trị image_url
+                product.setCreated_at(rs.getString("created_at")); // Lấy giá trị created_at
+                product.setUpdated_at(rs.getString("updated_at")); // Lấy giá trị updated_at
 
-                productList.add(product);
+                productList.add(product); // Thêm đối tượng Product vào danh sách
             }
         } catch (SQLException e) {
             System.err.println("Error while fetching products: " + e.getMessage());
@@ -33,4 +37,4 @@ public class ProductDAO {
         }
         return productList;
     }
-}
+    }

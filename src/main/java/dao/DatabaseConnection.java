@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/baloes"; // Thay "your_database" bằng tên database của bạn
+    private static final String URL = "jdbc:mysql://localhost:3306/web"; // Thay "your_database" bằng tên database của bạn
     private static final String USER = "root"; // Thay "root" bằng tên user của MySQL
     private static final String PASSWORD = ""; // Thay "password" bằng mật khẩu của bạn
 
