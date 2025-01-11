@@ -34,6 +34,7 @@ public class ProductDetailDAO {
         }
         return product;
     }
+
     public List<String> getProductImages(int productId) {
         List<String> imageLinks = new ArrayList<>();
         String sql = "SELECT image_link FROM images WHERE product_id = ?";
@@ -52,5 +53,26 @@ public class ProductDetailDAO {
         return imageLinks;
     }
 
+    public List<Product> getRandomProducts(int productId) {
+        List<Product> randomProducts = new ArrayList<>();
+        String sql = "SELECT * FROM products WHERE product_id != ? ORDER BY RAND() LIMIT 5"; // Lấy 5 sản phẩm ngẫu nhiên
 
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, productId); // Tránh lấy sản phẩm hiện tại
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setProduct_id(rs.getInt("product_id"));
+                product.setProduct_name(rs.getString("product_name"));
+                product.setPrice(rs.getInt("price"));
+                product.setImage_url(rs.getString("image_url"));
+                randomProducts.add(product); // Thêm sản phẩm vào danh sách
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching random products: " + e.getMessage());
+        }
+        return randomProducts;
+    }
 }
