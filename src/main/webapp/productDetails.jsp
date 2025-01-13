@@ -47,8 +47,13 @@
 
   <div class="product-price"><c:out value="${product.price}" /> đ</div>
 
-  <a href="GioHang.jsp" class="btn btn-primary">Mua ngay</a>
-  <a href="GioHang.jsp" class="btn btn-secondary">Thêm vào giỏ hàng</a>
+  <a href="GioHang.jsp">
+    <button class="btn btn-primary">Mua ngay</button>
+  </a>
+
+  <a href="GioHang.jsp">
+    <button class="btn btn-secondary">Thêm vào giỏ hàng</button>
+  </a>
 
   <div class="container_1_item">
     <div class="feature-items">
@@ -155,4 +160,7 @@
 </div>
 </div>
 </body>
+<script src="<c:url value='/js/main.js'/>"></script>
+
+
 </html>

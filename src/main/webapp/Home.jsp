@@ -31,7 +31,7 @@
             </c:forEach>
         </div>
         <div class="view-all-container">
-            <a href="Products.jsp" class="view-all">XEM TẤT CẢ</a>
+            <a href="Product" class="view-all">XEM TẤT CẢ</a>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
             </c:forEach>
         </div>
         <div class="view-all-container">
-            <a href="Products.jsp" class="view-all">XEM TẤT CẢ</a>
+            <a href="Product" class="view-all">XEM TẤT CẢ</a>
         </div>
     </div>
 

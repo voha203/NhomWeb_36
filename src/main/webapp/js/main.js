@@ -46,3 +46,4 @@ function toggleSidebar() {
         adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
     }
 }
+console.log('main.js loaded successfully');
