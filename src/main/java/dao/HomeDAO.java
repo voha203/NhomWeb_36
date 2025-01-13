@@ -4,6 +4,8 @@ package dao;
 import model.Image;
 import model.Product;
 import dao.DatabaseConnection;
+import model.Review;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,4 +71,34 @@ public class HomeDAO {
         }
         return bestSellingProducts;
     }
+    public List<Review> getReviewsByProduct(int productId) {
+        List<Review> reviews = new ArrayList<>();
+        String sql = "SELECT * FROM reviews WHERE product_id = ? ORDER BY review_date DESC";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, productId);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Review review = new Review(
+                        rs.getInt("review_id"),
+                        rs.getInt("product_id"),
+                        rs.getString("review_name"),
+                        rs.getString("content"),
+                        rs.getString("image"),
+                        rs.getString("review_date")
+                );
+                reviews.add(review);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error while fetching reviews: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return reviews;
+    }
+
+
 }

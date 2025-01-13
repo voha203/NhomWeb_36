@@ -1,15 +1,6 @@
 package model;
 
 public class Review {
-//    REATE TABLE Reviews (
-//            review_id INT AUTO_INCREMENT PRIMARY KEY,
-//            user_id INT NOT NULL,
-//            review_name VARCHAR(100) NOT NULL,
-//    content TEXT NOT NULL,
-//    image VARCHAR(255),
-//    review_date DATETIME DEFAULT CURRENT_TIMESTAMP
-//);viết insert
-
     private int review_id;
     private int user_id;
     private String review_name;
