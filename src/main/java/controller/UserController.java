@@ -15,8 +15,4 @@ public class UserController {
         this.userView = userView;
     }
 
-    public void displayAllUsers() {
-        List<User> users = userDao.getAllUsers();
-        userView.displayUsers(users);
-    }
 }

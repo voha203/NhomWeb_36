@@ -42,8 +42,7 @@
 
   <div class="rating">
     <span>⭐⭐⭐⭐☆</span>
-<%--    <span> (<c:out value="${product.reviewsCount}" /> đánh giá)</span>--%>
-<%--    <span> (<c:out value="${product.likesCount}" /> lượt thích)</span>--%>
+
   </div>
 
   <div class="product-price"><c:out value="${product.price}" /> đ</div>
@@ -81,25 +80,78 @@
 </div>
 
 <!-- Mô tả sản phẩm -->
-<div class="product-description-details">
-<h2>MÔ TẢ SẢN PHẨM</h2>
-<%--<p><c:out value="${product.longDescription}" /></p>--%>
-</div>
+  <div class="container_ctsp_2">
+
+    <div class="title_tdc">
+      <h>CHI TIẾT SẢN PHẨM</h>
+    </div>
+
+    <div class="mt">
+      <div class="title_mt">
+        <h1 class="product-title"><c:out value="${product.product_name}" /></h1>
+        <p class="product-description"><c:out value="${product.description}" /></p>
+        <div class="product-description"><!--MÔ TẢ SẢN PHẨM-->
+          <ul>
+            <li>Balo thiết kế theo phong cách Hàn Quốc nhiều ngăn rộng rãi dễ dàng sắp xếp và mang theo nhiều đồ.</li>
+            <li>Chất liệu vải Canvas kháng nước và bụi bẩn dễ vệ sinh và phù hợp với mọi thời tiết. Lớp lót dù polyester chống nước 2 lần, bảo vệ đồ vật bên trong khi trời mưa.</li>
+            <li>Quai đeo có lớp lót đệm xốp tạo cảm giác êm vai, thoải mái mang trong thời gian dài. Có thể điều chỉnh linh hoạt với mọi chiều cao.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="title_mt">
+        <h1 class="product-title">CHI TIẾT SẢN PHẨM:</h1>
+        <div class="product-description"><!--MÔ TẢ SẢN PHẨM-->
+          <h1>- Kích thước: 42*30*10</h1>
+          <h1>- Chất liệu: Vải canvas</h1>
+          <h1>- Họa tiết: Logo hình tròn cùng khóa kéo lạ mắt</h1>
+          <h1>- Ngăn chống sốc laptop 15.6 inch</h1>
+          <h1>- Xuất xứ: Việt Nam</h1>
+        </div>
+
+      </div>
+
+      <div class="title_mt">
+        <h1 class="product-title">Thiết kế gồm:</h1>
+        <div class="product-description"><!--MÔ TẢ SẢN PHẨM-->
+          <h1>-Tổng số ngăn: 5 ngăn</h1>
+          <h1>- Bên ngoài: 1 ngăn ngoài may thêm 2 túi đôi nhỏ phía trước</h1>
+          <h1>- Bên trong: 1 ngăn chính lớn, 1 ngăn chống sốc</h1>
+          <h1>- Quai đeo đệm mút với chức năng chống nhức mỏi khi đeo</h1>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
 
 <!-- Sản phẩm liên quan -->
-<div class="related-products">
-<h1>CÓ THỂ BẠN CŨNG THÍCH</h1>
+<div class="container_ctsp_3">
+  <div class="product-container">
+  <h1>CÓ THỂ BẠN CŨNG THÍCH</h1>
+
+</div>
 <div class="product-grid">
   <c:forEach var="relatedProduct" items="${relatedProducts}">
-    <div class="product-card">
+    <a class="product-link" href="${pageContext.request.contextPath}/Detail?product_id=<c:out value='${product.product_id}' />">
+    <div class="product">
       <img src="<c:out value='${relatedProduct.image_url}' />" alt="<c:out value='${relatedProduct.product_name}' />">
       <p class="product-name"><c:out value="${relatedProduct.product_name}" /></p>
       <p class="price"><c:out value="${relatedProduct.price}" /> đ</p>
-      <a href="productDetail.jsp?product_id=<c:out value='${relatedProduct.product_id}' />" class="btn btn-link">Xem chi tiết</a>
+
     </div>
   </c:forEach>
 </div>
-<a href="Products.jsp" class="view-all">XEM TẤT CẢ</a>
+  <div class="view-all-container">
+
+    <a href="Product" class="view-all">XEM TẤT CẢ</a>
+  </div>
+
 </div>
 </div>
 </body>

@@ -11,7 +11,7 @@ public class ProductDAO {
 
     public List<Product> getAllProducts() {
         List<Product> productList = new ArrayList<>();
-        String sql = "SELECT * FROM products"; // Lưu ý, bạn cần đảm bảo có cột 'link' trong bảng 'products'
+        String sql = "SELECT * FROM products";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
