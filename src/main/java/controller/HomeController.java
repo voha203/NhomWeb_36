@@ -32,6 +32,6 @@ public class HomeController extends HttpServlet {
         request.setAttribute("bestSellingProducts", bestSellingProducts);
 
         // Chuyển tiếp tới trang Home.jsp
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 }
