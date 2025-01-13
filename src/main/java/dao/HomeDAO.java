@@ -71,7 +71,10 @@ public class HomeDAO {
     }
     public List<Review> getTopThreeReviewsByProduct() {
         List<Review> reviews = new ArrayList<>();
-        String sql = "SELECT * FROM reviews ORDER BY review_id DESC LIMIT 3"; // Modify this query as per your requirements
+        String sql = "SELECT review_id, review_name, content, image, review_date " +
+                "FROM reviews " +
+                "ORDER BY review_id ASC " + // Sắp xếp theo review_id tăng dần
+                "LIMIT 3"; // Lấy 3 dòng đầu tiên
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -80,7 +83,6 @@ public class HomeDAO {
             while (rs.next()) {
                 Review review = new Review(
                         rs.getInt("review_id"),
-                        rs.getInt("product_id"),
                         rs.getString("review_name"),
                         rs.getString("content"),
                         rs.getString("image"),
@@ -95,6 +97,7 @@ public class HomeDAO {
 
         return reviews;
     }
+
 
 
 
