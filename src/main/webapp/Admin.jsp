@@ -52,28 +52,52 @@
         <!-- Main Content  -->
         <div id="content1" class="content active">
             <%-- Bạn có thể thay thế nội dung bằng cách lấy dữ liệu từ cơ sở dữ liệu --%>
-            <div class="dashboard">
-                <div class="box">
-                    <h2>Doanh Thu</h2>
-                    <p><span>₫500,000</span></p>
-                    <p class="status">Tổng doanh thu tháng</p>
+<%--            <div class="dashboard">--%>
+<%--                <div class="box">--%>
+<%--                    <h2>Doanh Thu</h2>--%>
+<%--                    <p><span>₫500,000</span></p>--%>
+<%--                    <p class="status">Tổng doanh thu tháng</p>--%>
+<%--                </div>--%>
+<%--                <div class="box">--%>
+<%--                    <h2>Số Lượng Sản Phẩm</h2>--%>
+<%--                    <p><span>150</span></p>--%>
+<%--                    <p class="status">Tổng sản phẩm hiện có</p>--%>
+<%--                </div>--%>
+<%--                <div class="box">--%>
+<%--                    <h2>Số Lượt Bán</h2>--%>
+<%--                    <p><span>120</span></p>--%>
+<%--                    <p class="status">Tổng lượt bán được</p>--%>
+<%--                </div>--%>
+<%--                <div class="box">--%>
+<%--                    <h2>Sản Phẩm Đã Bán</h2>--%>
+<%--                    <p><span>100</span></p>--%>
+<%--                    <p class="status">sản phẩm đã bán</p>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+                <div class="dashboard">
+                    <div class="box">
+                        <h2>Doanh Thu</h2>
+                        <p><span><%= request.getAttribute("totalRevenue") %></span></p>
+                        <p class="status">Tổng doanh thu tháng</p>
+                    </div>
+                    <div class="box">
+                        <h2>Số Lượng Sản Phẩm</h2>
+                        <p><span><%= request.getAttribute("totalProducts") %></span></p>
+                        <p class="status">Tổng sản phẩm hiện có</p>
+                    </div>
+                    <div class="box">
+                        <h2>Số Lượt Bán</h2>
+                        <p><span><%= request.getAttribute("totalOrders") %></span></p>
+                        <p class="status">Tổng lượt bán được</p>
+                    </div>
+                    <div class="box">
+                        <h2>Sản Phẩm Đã Bán</h2>
+                        <p><span><%= request.getAttribute("totalSoldProducts") %></span></p>
+                        <p class="status">Sản phẩm đã bán</p>
+                    </div>
                 </div>
-                <div class="box">
-                    <h2>Số Lượng Sản Phẩm</h2>
-                    <p><span>150</span></p>
-                    <p class="status">Tổng sản phẩm hiện có</p>
-                </div>
-                <div class="box">
-                    <h2>Số Lượt Bán</h2>
-                    <p><span>120</span></p>
-                    <p class="status">Tổng lượt bán được</p>
-                </div>
-                <div class="box">
-                    <h2>Sản Phẩm Đã Bán</h2>
-                    <p><span>100</span></p>
-                    <p class="status">sản phẩm đã bán</p>
-                </div>
-            </div>
+
 
             <header>
                 <h1>Danh sách nhân viên</h1>
