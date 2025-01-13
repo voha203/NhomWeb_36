@@ -19,10 +19,12 @@
         </div>
         <div class="product-grid">
             <c:forEach var="product" items="${newProducts}">
-                <a href=".jsp?productId=${product.productId}" class="product-link">
+                <a class="product-link" href="${pageContext.request.contextPath}/Detail?product_id=<c:out value='${product.product_id}' />">
                     <div class="product">
-                        <img src="${product.imageUrl}" alt="${product.productName}">
-                        <p class="product-name">${product.productName}</p>
+                        <img src="${product.image_url}" alt="${product.product_name}">
+                        <!-- Hiển thị tên sản phẩm -->
+                        <p class="product-name">${product.product_name}</p>
+                        <!-- Hiển thị giá sản phẩm -->
                         <p class="price">${product.price} đ</p>
                     </div>
                 </a>
@@ -39,9 +41,13 @@
         </div>
         <div class="product-grid">
             <c:forEach var="product" items="${bestSellingProducts}">
+                <a class="product-link" href="${pageContext.request.contextPath}/Detail?product_id=<c:out value='${product.product_id}' />">
+
                 <div class="product">
-                    <img src="${product.imageUrl}" alt="${product.productName}">
-                    <p class="product-name">${product.productName}</p>
+                    <img src="${product.image_url}" alt="${product.product_name}">
+                    <!-- Hiển thị tên sản phẩm -->
+                    <p class="product-name">${product.product_name}</p>
+                    <!-- Hiển thị giá sản phẩm -->
                     <p class="price">${product.price} đ</p>
                 </div>
             </c:forEach>
