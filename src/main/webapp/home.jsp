@@ -19,7 +19,7 @@
         </div>
         <div class="product-grid">
             <c:forEach var="product" items="${newProducts}">
-                <a href="ChiTietSanPham.jsp?productId=${product.productId}" class="product-link">
+                <a href=".jsp?productId=${product.productId}" class="product-link">
                     <div class="product">
                         <img src="${product.imageUrl}" alt="${product.productName}">
                         <p class="product-name">${product.productName}</p>
