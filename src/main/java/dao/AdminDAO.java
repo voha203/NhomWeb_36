@@ -13,11 +13,11 @@ import static dao.DatabaseConnection.getConnection;
 public class AdminDAO {
 
         // Truy vấn tổng doanh thu trong tháng
-        public double getTotalRevenue() {
+        public int getTotalRevenue() {
             String sql = "SELECT SUM(total_amount) AS total_revenue FROM orders WHERE order_date >= CURDATE() - INTERVAL 1 MONTH";
             try (Connection conn = getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
                 if (rs.next()) {
-                    return rs.getDouble("total_revenue");
+                    return rs.getInt("total_revenue");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -39,11 +39,16 @@ public class AdminDAO {
         }
 
         // Truy vấn số lượt bán được trong tháng
-        public int getTotalOrders() {
-            String sql = "SELECT COUNT(DISTINCT order_id) AS total_orders FROM order_details JOIN orders ON orders.order_id = order_details.order_id WHERE orders.order_date >= CURDATE() - INTERVAL 1 MONTH";
+        public int getTotalOrdersInMonth() {
+            String sql = "SELECT COUNT(DISTINCT orders.order_id) AS total_sales " +
+                    "FROM orders " +
+                    "JOIN order_status ON orders.status_id = order_status.status_id " +
+                    "WHERE orders.order_date >= CURDATE() - INTERVAL 1 MONTH " +
+                    "AND order_status.status_name = 'Đã giao'";
+
             try (Connection conn = getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
                 if (rs.next()) {
-                    return rs.getInt("total_orders");
+                    return rs.getInt("total_sales");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -51,7 +56,8 @@ public class AdminDAO {
             return 0;
         }
 
-        // Truy vấn tổng số sản phẩm đã bán trong tháng
+
+    // Truy vấn tổng số sản phẩm đã bán trong tháng
         public int getTotalSoldProducts() {
             String sql = "SELECT SUM(quantity) AS total_sold FROM order_details JOIN orders ON orders.order_id = order_details.order_id WHERE orders.order_date >= CURDATE() - INTERVAL 1 MONTH";
             try (Connection conn = getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {

@@ -3,14 +3,14 @@ package model;
 public class Order {
     private int order_id;
     private int user_id;
-    private int total_mamount;
+    private int total_amount;
     private int status_id;
     private String order_date;
 
-    public Order(int order_id, int user_id, int total_mamount, int status_id, String order_date) {
+    public Order(int order_id, int user_id, int total_amount, int status_id, String order_date) {
         this.order_id = order_id;
         this.user_id = user_id;
-        this.total_mamount = total_mamount;
+        this.total_amount = total_amount;
         this.status_id = status_id;
         this.order_date = order_date;
     }
@@ -31,12 +31,12 @@ public class Order {
         this.user_id = user_id;
     }
 
-    public int getTotal_mamount() {
-        return total_mamount;
+    public int getTotal_amount() {
+        return total_amount;
     }
 
-    public void setTotal_mamount(int total_mamount) {
-        this.total_mamount = total_mamount;
+    public void setTotal_amount(int total_amount) {
+        this.total_amount = total_amount;
     }
 
     public int getStatus_id() {
