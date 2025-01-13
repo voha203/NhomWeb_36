@@ -23,7 +23,7 @@
             <c:forEach var="product" items="${products}">
                 <div class="product">
                     <!-- Link đến trang chi tiết sản phẩm -->
-                    <a class="product-link" href="${pageContext.request.contextPath}/product_detail.jsp?product_id=<c:out value='${product.product_id}' />">
+                    <a class="product-link" href="${pageContext.request.contextPath}/Detail?product_id=<c:out value='${product.product_id}' />">
 
                     <!-- Hiển thị ảnh sản phẩm -->
                         <img src="${product.image_url}" alt="${product.product_name}">
