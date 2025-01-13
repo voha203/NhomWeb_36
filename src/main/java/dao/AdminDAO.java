@@ -1,4 +1,7 @@
 package dao;
+import model.Role;
+import model.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -69,6 +72,7 @@ public class AdminDAO {
             }
             return 0;
         }
+
     }
 
 
