@@ -41,4 +41,20 @@ public class EmployeeDAO {
         return employees;
     }
 
+    public boolean deleteEmployee(int userId) {
+        String sql = "DELETE FROM users WHERE user_id = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, userId);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0; // Nếu có ít nhất 1 dòng bị xóa, trả về true
+        } catch (SQLException e) {
+            System.err.println("Error while deleting employee: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false; // Trả về false nếu không xóa được
+    }
+
 }

@@ -110,7 +110,10 @@
                                 <td>${employee.status}</td>
                                 <td>
                                     <button class="edit">Sửa</button>
-                                    <button class="delete">Xóa</button>
+                                    <form action="Admin" method="post" style="display:inline;">
+                                        <input type="hidden" name="userId" value="${employee.user_id}" />
+                                        <button type="submit" class="delete">Xóa</button>
+                                    </form>
                                 </td>
                             </tr>
                         </c:forEach>

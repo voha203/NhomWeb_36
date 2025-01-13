@@ -25,7 +25,7 @@ public class User {
         this.password_hash = password_hash;
         this.email = email;
         this.role = role;
-        this.status = this.status;
+        this.status = status;
         this.created_at = created_at;
         this.updated_at = updated_at;
     }

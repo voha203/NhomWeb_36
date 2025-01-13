@@ -64,4 +64,23 @@ private List<User> filterEmployeesByRole(List<User> employees, String role) {
 
 }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Xử lý yêu cầu xóa nhân viên
+        String userIdStr = request.getParameter("userId");
+        if (userIdStr != null) {
+            int userId = Integer.parseInt(userIdStr);
+            boolean isDeleted = employeeDAO.deleteEmployee(userId);
+
+            if (isDeleted) {
+                request.setAttribute("message", "Nhân viên đã được xóa thành công.");
+            } else {
+                request.setAttribute("message", "Không thể xóa nhân viên.");
+            }
+        }
+
+        doGet(request, response);
+    }
+
+
 }
