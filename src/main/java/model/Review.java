@@ -2,15 +2,13 @@ package model;
 
 public class Review {
     private int review_id;
-    private int user_id;
     private String review_name;
     private String content;
     private String image;
     private String review_date;
 
-    public Review(int review_id, int user_id, String review_name, String content, String image, String review_date) {
+    public Review(int review_id, String review_name, String content, String image, String review_date) {
         this.review_id = review_id;
-        this.user_id = user_id;
         this.review_name = review_name;
         this.content = content;
         this.image = image;
@@ -23,14 +21,6 @@ public class Review {
 
     public void setReview_id(int review_id) {
         this.review_id = review_id;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
     }
 
     public String getReview_name() {

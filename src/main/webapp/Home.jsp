@@ -79,17 +79,24 @@
     <div class="container_4">
         <h1 class="testimonial-title">PHẢN HỒI KHÁCH HÀNG</h1>
         <div class="testimonials">
+            <!-- Loop through the testimonials -->
             <c:forEach var="testimonial" items="${testimonials}">
                 <div class="testimonial">
-                    <img src="${testimonial.image}" alt="${testimonial.name}" class="testimonial-avatar">
+                    <!-- Display the testimonial image -->
+                    <img src="${testimonial.image}" alt="${testimonial.review_name}" class="testimonial-avatar">
+
+                    <!-- Display the testimonial content -->
                     <div class="testimonial-content-wrapper">
                         <p class="testimonial-content">“${testimonial.content}”</p>
-                        <p class="testimonial-author">${testimonial.name},<br>${testimonial.title}</p>
+                        <p class="testimonial-author">${testimonial.review_name},<br>${testimonial.review_date}</p>
                     </div>
+
+
                 </div>
             </c:forEach>
         </div>
     </div>
+
 
 </div>
 </body>

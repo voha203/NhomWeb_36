@@ -18,28 +18,28 @@ public class HomeController extends HttpServlet {
     private HomeDAO homeDAO;
     private ProductDAO productDAO;
 
-    public HomeController(HomeDAO homeDAO, ProductDAO productDAO) {
-        this.homeDAO = homeDAO;
-        this.productDAO = productDAO;
+    @Override
+    public void init() throws ServletException {
+        // Initialize the DAO objects here
+        this.homeDAO = new HomeDAO();  // Assuming HomeDAO has a default constructor
+        this.productDAO = new ProductDAO();  // Assuming ProductDAO has a default constructor
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Lấy danh sách sản phẩm mới và bán chạy
-            // Lấy danh sách sản phẩm mới và bán chạy
-            List<Product> newProducts = homeDAO.getNewProducts();
-            List<Product> bestSellingProducts = homeDAO.getBestSellingProducts();
+        // Get the list of new and best-selling products
+        List<Product> newProducts = homeDAO.getNewProducts();
+        List<Product> bestSellingProducts = homeDAO.getBestSellingProducts();
 
-            // Lấy các đánh giá hoặc phản hồi của khách hàng
-            List<Review> testimonials = homeDAO.getTopThreeReviewsByProduct(); // Fetch all reviews or specific ones based on your logic
+        // Get the customer reviews or testimonials
+        List<Review> testimonials = homeDAO.getTopThreeReviewsByProduct(); // Fetch the top 3 reviews or adjust this method as needed
 
-            // Đặt các sản phẩm và đánh giá vào request
-            request.setAttribute("newProducts", newProducts);
-            request.setAttribute("bestSellingProducts", bestSellingProducts);
-            request.setAttribute("testimonials", testimonials); // Set testimonials for the JSP
+        // Set the products and reviews as request attributes
+        request.setAttribute("newProducts", newProducts);
+        request.setAttribute("bestSellingProducts", bestSellingProducts);
+        request.setAttribute("testimonials", testimonials); // Pass testimonials to the JSP
 
-            // Chuyển tiếp tới trang Home.jsp
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
-        }
-
+        // Forward the request to Home.jsp
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
+}

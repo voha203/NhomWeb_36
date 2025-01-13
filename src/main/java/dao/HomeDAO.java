@@ -11,12 +11,6 @@ import java.util.List;
 
 public class HomeDAO {
 
-    private HomeDAO HomeDAO;
-
-    public HomeDAO(dao.HomeDAO homeDAO) {
-        HomeDAO = homeDAO;
-    }
-
     public List<Product> getNewProducts() {
         List<Product> newProducts = new ArrayList<>();
         String sql = "SELECT * FROM products ORDER BY created_at DESC LIMIT 5";
@@ -77,13 +71,10 @@ public class HomeDAO {
     }
     public List<Review> getTopThreeReviewsByProduct() {
         List<Review> reviews = new ArrayList<>();
-        // Modify SQL query to limit to 3 reviews
-        String sql = "SELECT * FROM reviews WHERE product_id = ? ORDER BY review_date DESC LIMIT 3";
+        String sql = "SELECT * FROM reviews ORDER BY review_id DESC LIMIT 3"; // Modify this query as per your requirements
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setInt(1, productId);
-
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
@@ -104,6 +95,7 @@ public class HomeDAO {
 
         return reviews;
     }
+
 
 
 
