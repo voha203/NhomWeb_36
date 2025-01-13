@@ -1,9 +1,7 @@
 package dao;
 
 
-import model.Image;
 import model.Product;
-import dao.DatabaseConnection;
 import model.Review;
 
 import java.sql.*;
@@ -12,6 +10,12 @@ import java.util.List;
 
 
 public class HomeDAO {
+
+    private HomeDAO HomeDAO;
+
+    public HomeDAO(dao.HomeDAO homeDAO) {
+        HomeDAO = homeDAO;
+    }
 
     public List<Product> getNewProducts() {
         List<Product> newProducts = new ArrayList<>();
@@ -71,9 +75,10 @@ public class HomeDAO {
         }
         return bestSellingProducts;
     }
-    public List<Review> getReviewsByProduct(int productId) {
+    public List<Review> getTopThreeReviewsByProduct() {
         List<Review> reviews = new ArrayList<>();
-        String sql = "SELECT * FROM reviews WHERE product_id = ? ORDER BY review_date DESC";
+        // Modify SQL query to limit to 3 reviews
+        String sql = "SELECT * FROM reviews WHERE product_id = ? ORDER BY review_date DESC LIMIT 3";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -99,6 +104,7 @@ public class HomeDAO {
 
         return reviews;
     }
+
 
 
 }
