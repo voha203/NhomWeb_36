@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>ProductServlet</servlet-name>
-        <servlet-class>controller.ProductServlet</servlet-class>
+        <servlet-class>controller.ProductsController</servlet-class>
     </servlet>
 
     <!-- Định nghĩa URL pattern cho ProductServlet -->
@@ -19,7 +19,5 @@
     <welcome-file-list>
         <welcome-file>Product.jsp</welcome-file>
     </welcome-file-list>
-
-
 
 </web-app>
