@@ -154,6 +154,10 @@
             </div>
         </div>
     </div>
+
+
 </div>
 </body>
+
+<script src="<c:url value='/js/main.js'/>"></script>
 </html>

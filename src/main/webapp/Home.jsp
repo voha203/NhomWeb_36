@@ -12,7 +12,13 @@
 </head>
 <body>
 <div class="container">
+    <div class="container_0">
+        <div class="hinhanh">
+            <img src="images/slider_1_master.webp" alt="Balo MWC">
 
+        </div>
+
+    </div>
     <div class="container_1">
         <div class="product-container">
             <h1>SẢN PHẨM MỚI</h1>
