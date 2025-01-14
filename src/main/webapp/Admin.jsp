@@ -1,6 +1,6 @@
 <%@ page import="model.User" %>
 <%@ page import="model.Product" %>
-<
+<%@ page import="model.*" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -114,6 +114,7 @@
 
             <div class="form-popup" id="customerForm">
                 <form method="post" action="Admin" id="customerFormContent">
+                    <button class="add-button">Thêm khách hàng</button>
                     <input type="hidden" name="userId" value="${employee != null ? employee.user_id : ''}" />
                     <div class="form-group">
                         <label for="name">Tên nhân viên:</label>
@@ -184,14 +185,18 @@
                 <td>${product.price}</td>
                 <td>${product.created_at}</td>
                 <td>
-<%--                    <button class="edit">Sửa</button>--%>
-    <button class="edit-button" onclick="window.location.href='product?product_id=${product.product_id}'">Sửa</button>
+    <button class="edit-button" onclick="window.location.href='Admin?productId=${product.product_id}'">Sửa</button>
 
-                    <form method="post" action="Admin">
-                        <input type="hidden" name="deleteProductId" value="${product.product_id}">
-                        <button type="submit" class="delete-button"> Xóa </button>
-                    </form>
-                            </td>
+
+
+    <form id="deleteProductForm" method="post" action="Admin">
+        <input type="hidden" name="deleteProductId" value="${product.product_id}">
+        <button type="submit" class="delete-button" onclick="deleteProduct(${product.product_id})">Xóa</button>
+    </form>
+
+
+
+                </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -229,13 +234,184 @@
                    </div>
 
                    <div class="form-group">
-                       <button class="add-button" type="submit">Lưu</button>
+                       <button class="add-button" type="submit">${product != null ? 'Cập nhật' : 'Lưu'}</button>
                    </div>
                </form>
            </div>
 
        </div>
-</div>
+
+        <div id="content3" class="content">
+            <header>
+                <h1>Danh sách đơn hàng </h1>
+            </header>
+            <section>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Mã hóa đơn</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Địa chỉ nhận hàng</th>
+                        <th>Tổng số tiền</th>
+                        <th>Trạng thái đơn hàng</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <c:forEach var="order" items="${orders}">
+                            <tr>
+                                <td>${order.order_id}</td>
+                                <td>${order.name}</td>
+                                <td>${order.phone}</td>
+                                <td>${order.order_date}</td>
+                                <td>${order.address}</td>
+                                <td>${order.total_amount}</td>
+                                <td>${order.order_status}</td>
+                                        <td>
+                                            <button class="edit-button" onclick="window.location.href='Admin?orderId=${order.order_id}'">Sửa</button>
+
+                                            <form id="deleteOrderForm" method="post" action="Admin">
+                                                <input type="hidden" name="deleteOrderId" value="${order.order_id}">
+                                                <button type="submit" class="delete-button" onclick="deleteOrder(${order.order_id})">Xóa</button>
+                                            </form>
+
+                                        </td>
+
+                            </tr>
+                       </c:forEach>
+                    </tbody>
+                </table>
+            </section>
+
+
+            <div class="form-popup" id="customerForm">
+                <form method="post" action="Admin" id="customerFormContent">
+                    <input type="hidden" name="orderId" value="${order.order_id}" />
+
+                    <div class="form-group">
+                        <label for="name">Tên khách hàng:</label>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${order.name}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${order.phone}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Ngày cập nhật:</label>
+                        <input type="text" id="email" name="email" placeholder="Nhập ngày cập nhật" value="${order.order_date}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng:</label>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${order.address}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalAmount">Tổng số tiền:</label>
+                        <input type="text" id="totalAmount" name="totalAmount" placeholder="Nhập tổng số tiền" value="${order.total_amount}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderStatus">Trạng thái đơn hàng:</label>
+                        <input type="text" id="orderStatus" name="orderStatus" placeholder="Nhập trạng thái đơn hàng" value="${order.order_status}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="add-button" type="submit">${order != null ? 'Cập nhật' : 'Lưu'}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="content4" class="content">
+            <header>
+                <h1>Danh sách khách hàng</h1>
+            </header>
+            <section>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ nhận hàng</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <c:forEach var="customer" items="${customers}">
+                    <tr>
+                        <td>${customer.user_id}</td>
+                        <td>${customer.user_name}</td>
+
+                        <td>${customer.phone}</td>
+                        <td>${customer.email}</td>
+                        <td>${customer.address}</td>
+                        <td>
+<%--                            <button class="edit-button">Sửa</button>--%>
+<%--                            <button class="delete-button">Xóa</button>--%>
+    <button class="edit-button" onclick="window.location.href='Admin?customerId=${customer.user_id}'">Sửa</button>
+
+    <form id="deleteCustomerForm" method="post" action="Admin">
+        <input type="hidden" name="deleteCustomerId" value="${customer.user_id}">
+        <button type="submit" class="delete-button">Xóa</button>
+    </form>
+
+
+                        </td>
+                    </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="form-popup" id="customerForm">
+                <form method="post" action="Admin" id="customerFormContent">
+                    <input type="hidden" name="customerId" value="${customer.user_id}" />
+
+                    <div class="form-group">
+                        <label for="name">Tên khách hàng:</label>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${customer.user_name}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${customer.phone}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="Nhập email" value="${customer.email}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng:</label>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${customer.address}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="add-button" type="submit">${customer != null ? 'Cập nhật' : 'Lưu'}</button>
+                    </div>
+                </form>
+            </div>
+
+       </div>
+
+
+
+    </div>
+
+
+
 </div>
 </body>
 

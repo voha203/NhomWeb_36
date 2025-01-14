@@ -108,4 +108,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+function deleteProduct(productId) {
+    $.ajax({
+        url: 'Admin',  // URL xử lý xóa sản phẩm (có thể là URL chính của trang Admin)
+        type: 'POST',
+        data: { deleteProductId: productId },
+        success: function(response) {
+            alert("Xóa sản phẩm thành công");
+            // Nếu cần, có thể làm mới danh sách sản phẩm mà không cần tải lại trang
+            $("#product-" + productId).remove();  // Giả sử bạn gán id cho dòng sản phẩm là product-<id>
+        },
+        error: function() {
+            alert("Có lỗi xảy ra khi xóa sản phẩm.");
+        }
+    });
+}
+
+
 
