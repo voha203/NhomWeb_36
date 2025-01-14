@@ -31,20 +31,20 @@ function changeContent(contentId) {
 }
 
 // Toggle Sidebar
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const adminContainer = document.getElementById('admin-container');
-
-    if (sidebar.classList.contains('active')) {
-        // Nếu Sidebar đang hiện
-        sidebar.classList.remove('active'); // Ẩn Sidebar
-        adminContainer.style.marginLeft = '0'; // Đưa nội dung chính về toàn màn hình
-    } else {
-        // Nếu Sidebar đang ẩn
-        sidebar.classList.add('active'); // Hiện Sidebar
-        adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
-    }
-}
+// function toggleSidebar() {
+//     const sidebar = document.querySelector('.sidebar');
+//     const adminContainer = document.getElementById('admin-container');
+//
+//     if (sidebar.classList.contains('active')) {
+//         // Nếu Sidebar đang hiện
+//         sidebar.classList.remove('active'); // Ẩn Sidebar
+//         adminContainer.style.marginLeft = '0'; // Đưa nội dung chính về toàn màn hình
+//     } else {
+//         // Nếu Sidebar đang ẩn
+//         sidebar.classList.add('active'); // Hiện Sidebar
+//         adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
+//     }
+// }
 
 console.log('main.js loaded successfully')
 
