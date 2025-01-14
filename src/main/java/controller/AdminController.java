@@ -1,13 +1,16 @@
 package controller;
 
+import com.sun.tools.javac.Main;
 import dao.AdminDAO;
 import dao.EmployeeDAO;
+import dao.OrderDAO;
 import dao.ProductDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Order;
 import model.Product;
 import model.User;
 
@@ -20,6 +23,7 @@ public class AdminController extends HttpServlet {
     private AdminDAO adminDAO;
     private EmployeeDAO employeeDAO;
     private ProductDAO productDAO;
+    private OrderDAO orderDAO;
 
     @Override
     public void init() throws ServletException {
@@ -27,6 +31,7 @@ public class AdminController extends HttpServlet {
         this.adminDAO = new AdminDAO();
         this.employeeDAO = new EmployeeDAO();
         this.productDAO = new ProductDAO();
+        this.orderDAO=new OrderDAO();
         // Assuming AdminDAO has a default constructor
     }
 
@@ -63,6 +68,11 @@ public class AdminController extends HttpServlet {
 
         List<Product> product = productDAO.getAllProducts();
         request.setAttribute("products", product);
+
+        List<Order> orders=orderDAO.getAllOrders();
+        request.setAttribute("orders", orders);
+        System.out.println(orders);
+
 
 
         List<User> filteredEmployees = filterEmployeesByRole(employees, role);
@@ -170,6 +180,7 @@ public class AdminController extends HttpServlet {
 
 
         doGet(request, response);
+
     }
 
 }

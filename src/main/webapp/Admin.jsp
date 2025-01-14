@@ -1,6 +1,6 @@
 <%@ page import="model.User" %>
 <%@ page import="model.Product" %>
-<
+<%@ page import="model.*" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -235,6 +235,85 @@
            </div>
 
        </div>
+
+        <div id="content3" class="content">
+            <header>
+                <h1>Danh sách đơn hàng </h1>
+            </header>
+            <section>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Mã hóa đơn</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Địa chỉ nhận hàng</th>
+                        <th>Tổng số tiền</th>
+                        <th>Trạng thái đơn hàng</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <c:forEach var="order" items="${orders}">
+                            <tr>
+                                <td>${order.order_id}</td>
+                                <td>${order.name}</td>
+                                <td>${order.phone}</td>
+                                <td>${order.order_date}</td>
+                                <td>${order.address}</td>
+                                <td>${order.total_amount}</td>
+                                <td>${order.order_status}</td>
+                                        <td>
+                            <button class="edit-button">Sửa</button>
+                          <button class="delete-button">Xóa</button>
+                                        </td>
+                            </tr>
+                       </c:forEach>
+                    </tbody>
+                </table>
+            </section>
+
+
+<%--            <div class="form-popup" id="customerForm">--%>
+<%--                <form id="customerFormContent">--%>
+<%--                    <button class="add-button">Thêm đơn hàng</button>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="name">Tên khách hàng:</label>--%>
+<%--                        <input type="text" id="name" placeholder="Nhập tên khách hàng">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="form-group">--%>
+<%--                        <label for="phone">Số điện thoại:</label>--%>
+<%--                        <input type="text" id="phone" placeholder="Nhập số điện thoại">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="form-group">--%>
+<%--                        <label for="email">Ngày cập nhật</label>:</label>--%>
+<%--                        <input type="email" id="email" placeholder="Nhập ngày cập nhật">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="form-group">--%>
+<%--                        <label for="address">Địa chỉ nhận hàng:</label>--%>
+<%--                        <input type="text" id="address" placeholder="Nhập địa chỉ">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="address">Tổng số tiền:</label>--%>
+<%--                        <input type="text" id="address" placeholder="Nhập tổng số tiền">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="address">Trạng thái đơn hàng:</label>--%>
+<%--                        <input type="text" id="address" placeholder="Nhập trạng thái đơn hàng">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <button class="add-button">Lưu</button>--%>
+<%--                        <button class="add-button">Xóa</button>--%>
+<%--                    </div>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+        </div>
+
+
 </div>
 </div>
 </body>

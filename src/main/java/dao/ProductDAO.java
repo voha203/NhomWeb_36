@@ -1,5 +1,6 @@
 package dao;
 
+import com.sun.tools.javac.Main;
 import model.Product;
 import java.sql.*;
 import java.util.ArrayList;
@@ -132,5 +133,14 @@ public class ProductDAO {
             e.printStackTrace();
         }
         return product;
+    }
+
+    public static void main(String[] args) {
+        ProductDAO productDAO = new ProductDAO();
+        Product product = productDAO.getAllProducts().get(0);
+        System.out.println(product.getProduct_name());
+
+        System.out.println(product);
+
     }
 }

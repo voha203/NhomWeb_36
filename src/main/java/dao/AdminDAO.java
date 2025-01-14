@@ -46,7 +46,7 @@ public class AdminDAO {
             String sql = "SELECT COUNT(DISTINCT order_id) AS total_sales " +
                     "FROM orders " +
                     "WHERE order_date >= CURDATE() - INTERVAL 1 MONTH " +
-                    "AND status = 'Đã giao'";
+                    "AND order_status = 'Đã giao'";
 
             try (Connection conn = getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
                 if (rs.next()) {
