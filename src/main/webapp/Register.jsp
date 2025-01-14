@@ -1,0 +1,63 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: my pc
+  Date: 1/15/2025
+  Time: 1:50 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang đăng ký</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/font_Icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;500;700&display=swap">
+</head>
+<body>
+<div id="main">
+    <div id="container">
+        <div id="container_dk">
+            <div class="register-container">
+                <h2>ĐĂNG KÝ</h2>
+
+                <form action="UserController" method="post" class="register-form">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" id="email" placeholder="Nhập email" required>
+
+                    <label for="username">Tên đăng nhập <span>*</span></label>
+                    <input type="text" id="username" placeholder="Nhập tên đăng nhập" required>
+
+                    <label for="phone">Số điện thoại <span>*</span></label>
+                    <input type="tel" id="phone" placeholder="Nhập số điện thoại" required pattern="[0-9]{10}" title="Nhập số điện thoại.">
+
+                    <label for="password">Mật khẩu <span>*</span></label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+
+                    <label for="confirm-password">Xác nhận mật khẩu <span>*</span></label>
+                    <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" required>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-register">Đăng ký</button>
+                    </div>
+                </form>
+
+                <div class="support-info">
+                    <p>Thông tin cá nhân của bạn sẽ được dùng để điền vào hóa đơn, giúp bạn thanh toán nhanh chóng và dễ dàng</p>
+                    <p><strong>Hotline:</strong> 1900.633.349</p>
+                </div>
+                <a href="TrangChu.html" class="back-to-trangchu">Quay lại trang chủ</a>
+                <p>Already have an account? <a href="Login.jsp">Login here</a></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
