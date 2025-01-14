@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="assets/font_Icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;500;700&display=swap">
+    <script>
+        function themvaogiohang(x) {
+            var product_right = x.parentElement.children;
+            alert(product_right[3].children);
+        }
+
+    </script>
 </head>
 <body>
 <div id="main">
@@ -199,7 +205,7 @@
                 </a>
                 
                 <a href="GioHang.html">
-                    <button class="btn btn-secondary">Thêm vào giỏ hàng</button>
+                    <button class="btn btn-secondary" onclick="themvaogiohang()">Thêm vào giỏ hàng</button>
                 </a>
 
 
