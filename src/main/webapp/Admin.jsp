@@ -185,7 +185,6 @@
                 <td>${product.price}</td>
                 <td>${product.created_at}</td>
                 <td>
-<%--                    <button class="edit">Sửa</button>--%>
     <button class="edit-button" onclick="window.location.href='Admin?productId=${product.product_id}'">Sửa</button>
 
 
@@ -271,9 +270,15 @@
                                 <td>${order.total_amount}</td>
                                 <td>${order.order_status}</td>
                                         <td>
-                            <button class="edit-button">Sửa</button>
-                          <button class="delete-button">Xóa</button>
+                                            <button class="edit-button" onclick="window.location.href='Admin?orderId=${order.order_id}'">Sửa</button>
+
+                                            <form id="deleteOrderForm" method="post" action="Admin">
+                                                <input type="hidden" name="deleteOrderId" value="${order.order_id}">
+                                                <button type="submit" class="delete-button" onclick="deleteOrder(${order.order_id})">Xóa</button>
+                                            </form>
+
                                         </td>
+
                             </tr>
                        </c:forEach>
                     </tbody>
@@ -281,43 +286,47 @@
             </section>
 
 
-<%--            <div class="form-popup" id="customerForm">--%>
-<%--                <form id="customerFormContent">--%>
-<%--                    <button class="add-button">Thêm đơn hàng</button>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="name">Tên khách hàng:</label>--%>
-<%--                        <input type="text" id="name" placeholder="Nhập tên khách hàng">--%>
-<%--                    </div>--%>
+            <div class="form-popup" id="customerForm">
+                <form method="post" action="Admin" id="customerFormContent">
+                    <input type="hidden" name="orderId" value="${order.order_id}" />
 
-<%--                    <div class="form-group">--%>
-<%--                        <label for="phone">Số điện thoại:</label>--%>
-<%--                        <input type="text" id="phone" placeholder="Nhập số điện thoại">--%>
-<%--                    </div>--%>
+                    <div class="form-group">
+                        <label for="name">Tên khách hàng:</label>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${order.name}" required>
+                    </div>
 
-<%--                    <div class="form-group">--%>
-<%--                        <label for="email">Ngày cập nhật</label>:</label>--%>
-<%--                        <input type="email" id="email" placeholder="Nhập ngày cập nhật">--%>
-<%--                    </div>--%>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${order.phone}" required>
+                    </div>
 
-<%--                    <div class="form-group">--%>
-<%--                        <label for="address">Địa chỉ nhận hàng:</label>--%>
-<%--                        <input type="text" id="address" placeholder="Nhập địa chỉ">--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="address">Tổng số tiền:</label>--%>
-<%--                        <input type="text" id="address" placeholder="Nhập tổng số tiền">--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="address">Trạng thái đơn hàng:</label>--%>
-<%--                        <input type="text" id="address" placeholder="Nhập trạng thái đơn hàng">--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <button class="add-button">Lưu</button>--%>
-<%--                        <button class="add-button">Xóa</button>--%>
-<%--                    </div>--%>
-<%--                </form>--%>
-<%--            </div>--%>
+                    <div class="form-group">
+                        <label for="email">Ngày cập nhật:</label>
+                        <input type="text" id="email" name="email" placeholder="Nhập ngày cập nhật" value="${order.order_date}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng:</label>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${order.address}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalAmount">Tổng số tiền:</label>
+                        <input type="text" id="totalAmount" name="totalAmount" placeholder="Nhập tổng số tiền" value="${order.total_amount}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderStatus">Trạng thái đơn hàng:</label>
+                        <input type="text" id="orderStatus" name="orderStatus" placeholder="Nhập trạng thái đơn hàng" value="${order.order_status}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="add-button" type="submit">${order != null ? 'Cập nhật' : 'Lưu'}</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
 
         <div id="content4" class="content">
             <header>
@@ -338,7 +347,6 @@
                     <tbody>
 
 
-                    <tr>
                         <c:forEach var="customer" items="${customers}">
                     <tr>
                         <td>${customer.user_id}</td>
@@ -348,13 +356,16 @@
                         <td>${customer.email}</td>
                         <td>${customer.address}</td>
                         <td>
-<%--                            <button class="edit-button" onclick="window.location.href='Admin?userId=${employee.user_id}'">Sửa</button>--%>
-<%--                            <form method="post" action="Admin" style="display:inline;">--%>
-<%--                                <input type="hidden" name="deleteUserId" value="${employee.user_id}" />--%>
-<%--                                <button type="submit" class="delete-button">Xóa</button>--%>
-<%--                            </form>--%>
-                          <button class="edit-button">Sửa</button>
-                            <button class="delete-button">Xóa</button>
+<%--                            <button class="edit-button">Sửa</button>--%>
+<%--                            <button class="delete-button">Xóa</button>--%>
+    <button class="edit-button" onclick="window.location.href='Admin?customerId=${customer.user_id}'">Sửa</button>
+
+    <form id="deleteCustomerForm" method="post" action="Admin">
+        <input type="hidden" name="deleteCustomerId" value="${customer.user_id}">
+        <button type="submit" class="delete-button">Xóa</button>
+    </form>
+
+
                         </td>
                     </tr>
                     </c:forEach>
@@ -364,37 +375,43 @@
             </section>
 
             <div class="form-popup" id="customerForm">
-                <form id="customerFormContent">
-                    <button class="add-button">Thêm khách hàng</button>
+                <form method="post" action="Admin" id="customerFormContent">
+                    <input type="hidden" name="customerId" value="${customer.user_id}" />
+
                     <div class="form-group">
                         <label for="name">Tên khách hàng:</label>
-                        <input type="text" id="name" placeholder="Nhập tên khách hàng">
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${customer.user_name}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Số điện thoại:</label>
-                        <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${customer.phone}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="Nhập email">
+                        <input type="text" id="email" name="email" placeholder="Nhập email" value="${customer.email}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="address">Địa chỉ nhận hàng:</label>
-                        <input type="text" id="address" placeholder="Nhập địa chỉ">
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${customer.address}" required>
                     </div>
+
                     <div class="form-group">
-                        <button class="add-button">Lưu</button>
-                        <button class="add-button">Xóa</button>
+                        <button class="add-button" type="submit">${customer != null ? 'Cập nhật' : 'Lưu'}</button>
                     </div>
                 </form>
             </div>
-        </div>
+
+       </div>
 
 
-</div>
+
+    </div>
+
+
+
 </div>
 </body>
 

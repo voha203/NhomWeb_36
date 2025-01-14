@@ -29,8 +29,8 @@ public class AdminController extends HttpServlet {
         this.adminDAO = new AdminDAO();
         this.employeeDAO = new EmployeeDAO();
         this.productDAO = new ProductDAO();
-        this.orderDAO=new OrderDAO();
-        this.customerDAO=new CustomerDAO();
+        this.orderDAO = new OrderDAO();
+        this.customerDAO = new CustomerDAO();
         // Assuming AdminDAO has a default constructor
     }
 
@@ -75,6 +75,21 @@ public class AdminController extends HttpServlet {
             }
         }
 
+        String customerIdStr = request.getParameter("customerId"); // Lấy customerId từ request
+
+        if (customerIdStr != null && !customerIdStr.isEmpty()) {
+            try {
+                int customerId = Integer.parseInt(customerIdStr); // Cố gắng chuyển đổi customerId thành int
+                User customer = customerDAO.getCustomerById(customerId); // Lấy thông tin khách hàng theo customerId
+                request.setAttribute("customer", customer); // Gửi thông tin khách hàng vào request để hiển thị trên form
+            } catch (NumberFormatException e) {
+                // Xử lý lỗi nếu customerId không hợp lệ
+                request.setAttribute("errorMessage", "Mã khách hàng không hợp lệ.");
+            }
+        }
+
+
+
         String orderIdStr = request.getParameter("orderId"); // Lấy orderId từ request
 
         if (orderIdStr != null && !orderIdStr.isEmpty()) {
@@ -89,19 +104,19 @@ public class AdminController extends HttpServlet {
         }
 
 
-
         List<User> employees = employeeDAO.getAllEmployees();
         String role = (String) request.getSession().getAttribute("role");
 
         List<Product> product = productDAO.getAllProducts();
         request.setAttribute("products", product);
 
-        List<Order> orders=orderDAO.getAllOrders();
+        List<Order> orders = orderDAO.getAllOrders();
         request.setAttribute("orders", orders);
         System.out.println(orders);
 
-        List<User> customers=customerDAO.getAllCustomers();
+        List<User> customers = customerDAO.getAllCustomers();
         request.setAttribute("customers", customers);
+        System.out.println(customers);
 
 
 
@@ -124,7 +139,7 @@ public class AdminController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      //  Kiểm tra yêu cầu xóa nhân viên
+        //  Kiểm tra yêu cầu xóa nhân viên
         String deleteUserIdStr = request.getParameter("deleteUserId");
         if (deleteUserIdStr != null && !deleteUserIdStr.isEmpty()) {
             try {
@@ -233,7 +248,7 @@ public class AdminController extends HttpServlet {
             try {
                 int orderId = Integer.parseInt(orderIdStr);
                 int userId = Integer.parseInt(userIdStr1);
-                int phone1= Integer.parseInt(phoneStr);
+                int phone1 = Integer.parseInt(phoneStr);
                 int totalAmount = Integer.parseInt(totalAmountStr);
                 boolean isUpdated = orderDAO.updateOrder(orderId, userId, name, phone1, address, totalAmount, orderStatus, orderDate);
                 request.setAttribute("message", isUpdated ? "Cập nhật đơn hàng thành công." : "Không thể cập nhật đơn hàng.");
@@ -252,15 +267,45 @@ public class AdminController extends HttpServlet {
             }
         }
 
-        // Chuyển lại về phương thức doGet để cập nhật lại trang
 
+        // Handle customer operations
+        String deleteCustomerIdStr = request.getParameter("deleteCustomerId");
+        if (deleteCustomerIdStr != null && !deleteCustomerIdStr.isEmpty()) {
+            try {
+                int deleteCustomerId = Integer.parseInt(deleteCustomerIdStr);
+                boolean isDeleted = customerDAO.deleteCustomer(deleteCustomerId);
+                request.setAttribute("message", isDeleted ? "Khách hàng đã được xóa thành công." : "Không thể xóa khách hàng.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Mã khách hàng không hợp lệ.");
+            }
+        }
 
+        String customerIdStr = request.getParameter("customerId");
+        String customerName = request.getParameter("name");
+        String customerAddress = request.getParameter("address");
+        String customerPhone = request.getParameter("phone");
+        String customerUsername = request.getParameter("username");
+        String customerPassword = request.getParameter("password");
+        String customerEmail = request.getParameter("email");
+        String customerStatus = request.getParameter("status");
+
+        if (customerIdStr != null && !customerIdStr.isEmpty()) {
+            try {
+                int customerId = Integer.parseInt(customerIdStr);
+                boolean isUpdated = customerDAO.updateCustomer(customerId, customerName, customerAddress, customerPhone, customerUsername, customerPassword, customerEmail, customerStatus);
+                request.setAttribute("message", isUpdated ? "Customer updated successfully." : "Failed to update customer.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Invalid customer ID.");
+            }
+        } else {
+            boolean isAdded = customerDAO.addCustomer(customerName, customerAddress, customerPhone, customerUsername, customerPassword, customerEmail, customerStatus);
+            request.setAttribute("message", isAdded ? "Customer added successfully." : "Failed to add customer.");
+        }
 
 
         doGet(request, response);
 
     }
-
 }
             // Lấy action từ request
 
