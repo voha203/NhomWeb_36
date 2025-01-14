@@ -1296,6 +1296,22 @@ h2 {
 .support-info strong {
     color: #333;
 }
+.register-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
 
 /*dang ky*/
 .register-form input:focus {

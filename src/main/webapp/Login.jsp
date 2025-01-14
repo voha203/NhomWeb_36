@@ -1,10 +1,10 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="model.User" %>
 <%@ page import="dao.UserDAO" %>
+<%@ page import="controller.UserController" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,19 +26,19 @@
                 <h2>ĐĂNG NHẬP</h2>
 
 
-                <form class="login-form">
+                <form action="User" method="post" class="login-form">
                     <label for="username">Tên đăng nhập <span>*</span></label>
-                    <input type="text" id="username" placeholder="Nhập tên đăng nhập" required>
+                    <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
 
                     <label for="password">Mật khẩu <span>*</span></label>
-                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
 
                     <div class="form-actions">
                         <button type="submit" class="btn-login">Đăng nhập</button>
                         <a href="TrangQuenMK.html" class="forgot-password">Quên mật khẩu?</a>
-
                     </div>
                 </form>
+
                 <div class="divider">HOẶC</div>
                 <div class="social-login">
                     <button class="btn-social facebook">Facebook</button>

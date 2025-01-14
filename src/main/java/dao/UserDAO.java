@@ -39,7 +39,6 @@ public class UserDAO {
     // Kiểm tra đăng nhập
     public User loginUser(String username, String password) {
         String sql = "SELECT * FROM users WHERE username = ?";
-
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
@@ -49,8 +48,7 @@ public class UserDAO {
             if (rs.next()) {
                 String storedPasswordHash = rs.getString("password_hash");
                 if (BCrypt.checkpw(password, storedPasswordHash)) {
-                    // Trả về thông tin người dùng nếu mật khẩu đúng
-                    User user = new User(
+                    return new User(
                             rs.getInt("user_id"),
                             rs.getString("user_name"),
                             rs.getString("address"),
@@ -61,7 +59,6 @@ public class UserDAO {
                             rs.getString("role"),
                             rs.getString("status")
                     );
-                    return user;
                 }
             }
         } catch (SQLException e) {

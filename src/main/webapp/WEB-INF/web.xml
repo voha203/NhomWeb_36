@@ -4,21 +4,22 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-    <servlet>
+<!--    <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>controller.ProductsController</servlet-class>
     </servlet>
 
-    <!-- Định nghĩa URL pattern cho ProductServlet -->
+    &lt;!&ndash; Định nghĩa URL pattern cho ProductServlet &ndash;&gt;
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/products</url-pattern>
     </servlet-mapping>
 
-    <!-- Định nghĩa trang JSP để hiển thị các sản phẩm -->
+    &lt;!&ndash; Định nghĩa trang JSP để hiển thị các sản phẩm &ndash;&gt;
     <welcome-file-list>
         <welcome-file>Product.jsp</welcome-file>
     </welcome-file-list>
+    -->
     <servlet>
         <servlet-name>UserController</servlet-name>
         <servlet-class>controller.UserController</servlet-class>
@@ -27,5 +28,7 @@
         <servlet-name>UserController</servlet-name>
         <url-pattern>/User</url-pattern>
     </servlet-mapping>
+
+
 
 </web-app>

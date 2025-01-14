@@ -12,7 +12,7 @@ import model.Product;
 import model.User;
 import java.io.IOException;
 
-@WebServlet(name = "UserController", value = "/User")
+@WebServlet(name = "UserController", value = "/Login")
 public class UserController extends HttpServlet {
     private UserDAO dao;
 
@@ -39,7 +39,7 @@ public class UserController extends HttpServlet {
 
         // Gọi phương thức đăng ký người dùng từ UserDAO
         if (dao.registerUser(user)) {
-            response.sendRedirect("User.jsp"); // Redirect đến trang login sau khi đăng ký thành công
+            response.sendRedirect("Login.jsp"); // Redirect đến trang login sau khi đăng ký thành công
         } else {
             response.getWriter().println("Đăng ký thất bại!"); // Thông báo khi đăng ký thất bại
         }
