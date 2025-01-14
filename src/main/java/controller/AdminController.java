@@ -62,6 +62,20 @@ public class AdminController extends HttpServlet {
             }
         }
 
+        String productIdStr = request.getParameter("productId"); // Lấy productId từ request
+
+        if (productIdStr != null && !productIdStr.isEmpty()) {
+            try {
+                int productId = Integer.parseInt(productIdStr); // Cố gắng chuyển đổi productId thành int
+                Product product = productDAO.getProductById(productId); // Lấy thông tin sản phẩm theo productId
+                request.setAttribute("product", product); // Gửi thông tin sản phẩm vào request để hiển thị trên form
+            } catch (NumberFormatException e) {
+                // Xử lý lỗi nếu productId không hợp lệ
+                request.setAttribute("errorMessage", "Mã sản phẩm không hợp lệ.");
+            }
+        }
+
+
         List<User> employees = employeeDAO.getAllEmployees();
         String role = (String) request.getSession().getAttribute("role");
 

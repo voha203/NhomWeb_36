@@ -114,6 +114,7 @@
 
             <div class="form-popup" id="customerForm">
                 <form method="post" action="Admin" id="customerFormContent">
+                    <button class="add-button">Thêm khách hàng</button>
                     <input type="hidden" name="userId" value="${employee != null ? employee.user_id : ''}" />
                     <div class="form-group">
                         <label for="name">Tên nhân viên:</label>
@@ -185,13 +186,18 @@
                 <td>${product.created_at}</td>
                 <td>
 <%--                    <button class="edit">Sửa</button>--%>
-    <button class="edit-button" onclick="window.location.href='product?product_id=${product.product_id}'">Sửa</button>
+    <button class="edit-button" onclick="window.location.href='Admin?productId=${product.product_id}'">Sửa</button>
 
-                    <form method="post" action="Admin">
-                        <input type="hidden" name="deleteProductId" value="${product.product_id}">
-                        <button type="submit" class="delete-button"> Xóa </button>
-                    </form>
-                            </td>
+
+
+    <form id="deleteProductForm" method="post" action="Admin">
+        <input type="hidden" name="deleteProductId" value="${product.product_id}">
+        <button type="submit" class="delete-button" onclick="deleteProduct(${product.product_id})">Xóa</button>
+    </form>
+
+
+
+                </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -229,7 +235,7 @@
                    </div>
 
                    <div class="form-group">
-                       <button class="add-button" type="submit">Lưu</button>
+                       <button class="add-button" type="submit">${product != null ? 'Cập nhật' : 'Lưu'}</button>
                    </div>
                </form>
            </div>

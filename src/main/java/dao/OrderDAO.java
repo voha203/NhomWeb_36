@@ -38,6 +38,71 @@ public class OrderDAO {
         return orders; // Trả về danh sách các đơn hàng
     }
 
+    public boolean addOrder(int userId, String name, int phone, String address, int totalAmount, String orderStatus, String orderDate) {
+        String sql = "INSERT INTO orders (user_id, name, phone, address, total_amount, order_status, order_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setString(2, name);
+            preparedStatement.setInt(3, phone);
+            preparedStatement.setString(4, address);
+            preparedStatement.setInt(5, totalAmount);
+            preparedStatement.setString(6, orderStatus);
+            preparedStatement.setString(7, orderDate);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while adding order: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean updateOrder(int orderId, int userId, String name, int phone, String address, int totalAmount, String orderStatus, String orderDate) {
+        String sql = "UPDATE orders SET user_id = ?, name = ?, phone = ?, address = ?, total_amount = ?, order_status = ?, order_date = ? WHERE order_id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setString(2, name);
+            preparedStatement.setInt(3, phone);
+            preparedStatement.setString(4, address);
+            preparedStatement.setInt(5, totalAmount);
+            preparedStatement.setString(6, orderStatus);
+            preparedStatement.setString(7, orderDate);
+            preparedStatement.setInt(8, orderId);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while updating order: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean deleteOrder(int orderId) {
+        String sql = "DELETE FROM orders WHERE order_id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, orderId);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while deleting order: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+
     public static void main(String[] args) {
         try {
             OrderDAO orderDAO = new OrderDAO();
