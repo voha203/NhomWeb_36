@@ -1,4 +1,3 @@
-
 function changeImage(imageSrc) {
     document.getElementById('displayed-image').src = imageSrc;
 }
@@ -31,18 +30,82 @@ function changeContent(contentId) {
     }
 }
 
- // Toggle Sidebar
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const adminContainer = document.getElementById('admin-container');
+// Toggle Sidebar
+// function toggleSidebar() {
+//     const sidebar = document.querySelector('.sidebar');
+//     const adminContainer = document.getElementById('admin-container');
+//
+//     if (sidebar.classList.contains('active')) {
+//         // Nếu Sidebar đang hiện
+//         sidebar.classList.remove('active'); // Ẩn Sidebar
+//         adminContainer.style.marginLeft = '0'; // Đưa nội dung chính về toàn màn hình
+//     } else {
+//         // Nếu Sidebar đang ẩn
+//         sidebar.classList.add('active'); // Hiện Sidebar
+//         adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
+//     }
+// }
 
-    if (sidebar.classList.contains('active')) {
-        // Nếu Sidebar đang hiện
-        sidebar.classList.remove('active'); // Ẩn Sidebar
-        adminContainer.style.marginLeft = '0'; // Đưa nội dung chính về toàn màn hình
+console.log('main.js loaded successfully')
+
+
+//     document.addEventListener("DOMContentLoaded", function () {
+//     const deleteButtons = document.querySelectorAll(".delete-button");
+//
+//     deleteButtons.forEach(button => {
+//     button.addEventListener("click", function () {
+//     const row = this.closest("tr");
+//     const userId = row.querySelector("td:first-child").innerText;
+//
+//     if (confirm(`Bạn có chắc muốn xóa nhân viên với ID: ${userId}?`)) {
+//     // Gửi yêu cầu xóa đến server
+//     fetch(`/Admin?user_id=${userId}`, {
+//     method: "DELETE"
+// })
+//     .then(response => {
+//     if (response.ok) {
+//     alert("Xóa thành công!");
+//     row.remove(); // Xóa dòng khỏi bảng
+// } else {
+//     alert("Xóa thất bại. Vui lòng thử lại.");
+// }
+// })
+//     .catch(error => {
+//     console.error("Lỗi:", error);
+//     alert("Đã xảy ra lỗi khi xóa.");
+// });
+// }
+// });
+// });
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Kiểm tra trạng thái đăng nhập từ sessionStorage
+    var loggedInUser = sessionStorage.getItem('loggedInUser'); // Lấy tên người dùng từ sessionStorage
+
+    // Nếu có người dùng đăng nhập
+    if (loggedInUser) {
+        // Hiển thị tài khoản người dùng
+        document.getElementById('account-link').style.display = 'block';
+        document.getElementById('account-name').textContent = loggedInUser; // Tên người dùng
+        // Ẩn Đăng nhập và Đăng ký
+        document.getElementById('login-link').style.display = 'none';
+        document.getElementById('register-link').style.display = 'none';
+
+        // Nếu là Admin, hiển thị "Admin" thay vì tên người dùng
+        if (loggedInUser === 'admin') {
+            document.getElementById('admin-link').style.display = 'block';
+            document.getElementById('account-link').style.display = 'none'; // Ẩn tài khoản nếu là admin
+        } else {
+            document.getElementById('admin-link').style.display = 'none';
+        }
     } else {
-        // Nếu Sidebar đang ẩn
-        sidebar.classList.add('active'); // Hiện Sidebar
-        adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
+        // Nếu chưa đăng nhập, hiển thị Đăng nhập và Đăng ký
+        document.getElementById('login-link').style.display = 'block';
+        document.getElementById('register-link').style.display = 'block';
+        document.getElementById('account-link').style.display = 'none';
+        document.getElementById('admin-link').style.display = 'none';
     }
-}
+});
+
+

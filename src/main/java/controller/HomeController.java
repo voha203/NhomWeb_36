@@ -1,12 +1,14 @@
 package controller;
 
 import dao.HomeDAO;
+import dao.ProductDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Product;
+import model.Review;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,24 +16,30 @@ import java.util.List;
 @WebServlet(name = "HomeController", urlPatterns = {"/Home"})
 public class HomeController extends HttpServlet {
     private HomeDAO homeDAO;
+    private ProductDAO productDAO;
 
     @Override
     public void init() throws ServletException {
-        // Khởi tạo DAO khi Servlet được load
-        this.homeDAO = new HomeDAO();
+        // Initialize the DAO objects here
+        this.homeDAO = new HomeDAO();  // Assuming HomeDAO has a default constructor
+        this.productDAO = new ProductDAO();  // Assuming ProductDAO has a default constructor
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Lấy danh sách sản phẩm mới và bán chạy
+        // Get the list of new and best-selling products
         List<Product> newProducts = homeDAO.getNewProducts();
         List<Product> bestSellingProducts = homeDAO.getBestSellingProducts();
 
-        // Đặt danh sách sản phẩm vào request
+        // Get the customer reviews or testimonials
+        List<Review> testimonials = homeDAO.getTopThreeReviewsByProduct(); // Fetch the top 3 reviews or adjust this method as needed
+
+        // Set the products and reviews as request attributes
         request.setAttribute("newProducts", newProducts);
         request.setAttribute("bestSellingProducts", bestSellingProducts);
+        request.setAttribute("testimonials", testimonials); // Pass testimonials to the JSP
 
-        // Chuyển tiếp tới trang Home.jsp
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        // Forward the request to Home.jsp
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 }
