@@ -40,57 +40,97 @@ public class ProductDAO {
 
 
     // Thêm sản phẩm mới
-    public void addProduct(Product product) throws SQLException {
+    public boolean addProduct(Product product) {
         String sql = "INSERT INTO products (product_name, description, price, stock, image_url, created_at) VALUES (?, ?, ?, ?, ?, ?)";
+
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            ResultSet rs = preparedStatement.executeQuery();
-            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-                stmt.setString(1, product.getProduct_name());
-                stmt.setString(2, product.getDescription());
-                stmt.setInt(3, product.getPrice());
-                stmt.setInt(4, product.getStock());
-                stmt.setString(5, product.getImage_url());
-                stmt.setString(6, product.getCreated_at());
-                stmt.executeUpdate();
-            }
+            preparedStatement.setString(1, product.getProduct_name());
+            preparedStatement.setString(2, product.getDescription());
+            preparedStatement.setInt(3, product.getPrice());
+            preparedStatement.setInt(4, product.getStock());
+            preparedStatement.setString(5, product.getImage_url());
+            preparedStatement.setString(6, product.getCreated_at());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while adding product: " + e.getMessage());
+            e.printStackTrace();
         }
+        return false;
     }
 
     // Cập nhật sản phẩm
-    public void updateProduct(Product product) throws SQLException {
+    public boolean updateProduct(Product product) {
         String sql = "UPDATE products SET product_name = ?, description = ?, price = ?, stock = ?, image_url = ?, updated_at = ? WHERE product_id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            ResultSet rs = preparedStatement.executeQuery();
-            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-                stmt.setString(1, product.getProduct_name()); // Sử dụng getter theo đúng quy ước
-                stmt.setString(2, product.getDescription());
-                stmt.setInt(3, product.getPrice());
-                stmt.setInt(4, product.getStock());
-                stmt.setString(5, product.getImage_url());
-                stmt.setString(6, product.getUpdated_at());
-                stmt.setInt(7, product.getProduct_id());
-                stmt.executeUpdate(); // Thực thi câu lệnh
-            }
+            preparedStatement.setString(1, product.getProduct_name());
+            preparedStatement.setString(2, product.getDescription());
+            preparedStatement.setInt(3, product.getPrice());
+            preparedStatement.setInt(4, product.getStock());
+            preparedStatement.setString(5, product.getImage_url());
+            preparedStatement.setString(6, product.getUpdated_at());
+            preparedStatement.setInt(7, product.getProduct_id());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while updating product: " + e.getMessage());
+            e.printStackTrace();
         }
+        return false;
     }
 
     // Xóa sản phẩm
-    public void deleteProduct(int productId) throws SQLException {
+    public boolean deleteProduct(int productId) {
         String sql = "DELETE FROM products WHERE product_id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            ResultSet rs = preparedStatement.executeQuery();
-            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-                stmt.setInt(1, productId);
-                stmt.executeUpdate();
-            }
+            preparedStatement.setInt(1, productId);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error while deleting product: " + e.getMessage());
+            e.printStackTrace();
         }
+        return false;
+    }
+
+    // Lấy sản phẩm theo ID
+    public Product getProductById(int productId) {
+        Product product = null;
+        String sql = "SELECT * FROM products WHERE product_id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, productId);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                product = new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getString("description"),
+                        rs.getInt("price"),
+                        rs.getInt("stock"),
+                        rs.getString("image_url"),
+                        rs.getString("created_at"),
+                        rs.getString("updated_at")
+                );
+            }
+        } catch (SQLException e) {
+            System.err.println("Error while fetching product by ID: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return product;
     }
 }

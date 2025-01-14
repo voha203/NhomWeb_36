@@ -120,6 +120,55 @@ public class AdminController extends HttpServlet {
             boolean isAdded = employeeDAO.addEmployee(name, address, phone, username, password, email, role, status);
             request.setAttribute("message", isAdded ? "Thêm nhân viên thành công." : "Không thể thêm nhân viên.");
         }
+
+
+        String deleteProductIdStr = request.getParameter("deleteProductId");
+        if (deleteProductIdStr != null && !deleteProductIdStr.isEmpty()) {
+            try {
+                int deleteProductId = Integer.parseInt(deleteProductIdStr);
+                boolean isDeleted = productDAO.deleteProduct(deleteProductId);
+                request.setAttribute("message", isDeleted ? "Xóa sản phẩm thành công." : "Không thể xóa sản phẩm.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Mã sản phẩm không hợp lệ.");
+            }
+        }
+
+
+        String productIdStr = request.getParameter("productId");
+        String productName = request.getParameter("productName");
+        String imageUrl = request.getParameter("imageUrl");
+        String description = request.getParameter("description");
+
+        String stockStr = request.getParameter("stock");
+        String priceStr = request.getParameter("price");
+        String createdAt = request.getParameter("createdAt");
+
+        if (productIdStr != null && !productIdStr.isEmpty()) {
+            try {
+                int productId = Integer.parseInt(productIdStr);
+                int price = Integer.parseInt(priceStr);
+                int stock = Integer.parseInt(stockStr);
+                Product product = new Product(productId, productName, description, price, stock, imageUrl, createdAt, null);
+                boolean isUpdated = productDAO.updateProduct(product);
+                request.setAttribute("message", isUpdated ? "Cập nhật sản phẩm thành công." : "Không thể cập nhật sản phẩm.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Dữ liệu không hợp lệ.");
+            }
+        } else {
+            try {
+                int price = Integer.parseInt(priceStr);
+                int stock = Integer.parseInt(stockStr);
+                Product product = new Product(0, productName, description, price, stock, imageUrl, createdAt, null);
+                boolean isAdded = productDAO.addProduct(product);
+                request.setAttribute("message", isAdded ? "Thêm sản phẩm thành công." : "Không thể thêm sản phẩm.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Dữ liệu không hợp lệ.");
+            }
+        }
+
+
+
+
         doGet(request, response);
     }
 

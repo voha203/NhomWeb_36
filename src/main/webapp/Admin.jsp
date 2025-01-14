@@ -105,7 +105,6 @@
                                     <input type="hidden" name="deleteUserId" value="${employee.user_id}" />
                                     <button type="submit" class="delete-button">Xóa</button>
                                 </form>
-                                </form>
                             </td>
                         </tr>
                     </c:forEach>
@@ -185,17 +184,57 @@
                 <td>${product.price}</td>
                 <td>${product.created_at}</td>
                 <td>
-                    <button class="edit">Sửa</button>
-                    <button class="delete">Xóa</button>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-      </table>
+<%--                    <button class="edit">Sửa</button>--%>
+    <button class="edit-button" onclick="window.location.href='product?product_id=${product.product_id}'">Sửa</button>
 
-        </section>
-    </div>
-         </div>
+                    <form method="post" action="Admin">
+                        <input type="hidden" name="deleteProductId" value="${product.product_id}">
+                        <button type="submit" class="delete-button"> Xóa </button>
+                    </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="form-popup" id="customerForm">
+                <form method="post" action="Admin" id="productFormContent">
+                    <input type="hidden" name="productId" value="${product.product_id}" />
+
+                   <div class="form-group">
+                       <label for="productName">Tên sản phẩm:</label>
+                       <input type="text" id="productName" name="productName" placeholder="Nhập tên sản phẩm" value="${product.product_name}" required>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="imageUrl">Hình ảnh:</label>
+                       <input type="text" id="imageUrl" name="imageUrl" placeholder="Nhập đường dẫn hình ảnh" value="${product.image_url}" required>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="description">Mô tả:</label>
+                       <input  type="text" id="description" name="description" placeholder="Nhập mô tả" required>${product.description}</input>
+                   </div>
+
+
+
+                   <div class="form-group">
+                       <label for="stock">Số lượng:</label>
+                       <input type="text" id="stock" name="stock" placeholder="Nhập số lượng" value="${product.stock}" required>
+                   </div>
+                   <div class="form-group">
+                       <label for="price">Giá:</label>
+                       <input type="text" id="price" name="price" placeholder="Nhập giá sản phẩm" value="${product.price}" required>
+                   </div>
+
+                   <div class="form-group">
+                       <button class="add-button" type="submit">Lưu</button>
+                   </div>
+               </form>
+           </div>
+
+       </div>
 </div>
 </div>
 </body>
