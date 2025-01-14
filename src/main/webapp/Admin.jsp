@@ -313,6 +313,80 @@
 <%--            </div>--%>
         </div>
 
+        <div id="content4" class="content">
+            <header>
+                <h1>Danh sách khách hàng</h1>
+            </header>
+            <section>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ nhận hàng</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    <tr>
+                        <c:forEach var="customer" items="${customers}">
+                    <tr>
+                        <td>${customer.user_id}</td>
+                        <td>${customer.user_name}</td>
+
+                        <td>${customer.phone}</td>
+                        <td>${customer.email}</td>
+                        <td>${customer.address}</td>
+                        <td>
+<%--                            <button class="edit-button" onclick="window.location.href='Admin?userId=${employee.user_id}'">Sửa</button>--%>
+<%--                            <form method="post" action="Admin" style="display:inline;">--%>
+<%--                                <input type="hidden" name="deleteUserId" value="${employee.user_id}" />--%>
+<%--                                <button type="submit" class="delete-button">Xóa</button>--%>
+<%--                            </form>--%>
+                          <button class="edit-button">Sửa</button>
+                            <button class="delete-button">Xóa</button>
+                        </td>
+                    </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="form-popup" id="customerForm">
+                <form id="customerFormContent">
+                    <button class="add-button">Thêm khách hàng</button>
+                    <div class="form-group">
+                        <label for="name">Tên khách hàng:</label>
+                        <input type="text" id="name" placeholder="Nhập tên khách hàng">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Nhập email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng:</label>
+                        <input type="text" id="address" placeholder="Nhập địa chỉ">
+                    </div>
+                    <div class="form-group">
+                        <button class="add-button">Lưu</button>
+                        <button class="add-button">Xóa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
 </div>
 </div>

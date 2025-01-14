@@ -1,10 +1,7 @@
 package controller;
 
 import com.sun.tools.javac.Main;
-import dao.AdminDAO;
-import dao.EmployeeDAO;
-import dao.OrderDAO;
-import dao.ProductDAO;
+import dao.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,6 +19,7 @@ import java.util.List;
 public class AdminController extends HttpServlet {
     private AdminDAO adminDAO;
     private EmployeeDAO employeeDAO;
+    private CustomerDAO customerDAO;
     private ProductDAO productDAO;
     private OrderDAO orderDAO;
 
@@ -32,6 +30,7 @@ public class AdminController extends HttpServlet {
         this.employeeDAO = new EmployeeDAO();
         this.productDAO = new ProductDAO();
         this.orderDAO=new OrderDAO();
+        this.customerDAO=new CustomerDAO();
         // Assuming AdminDAO has a default constructor
     }
 
@@ -72,6 +71,9 @@ public class AdminController extends HttpServlet {
         List<Order> orders=orderDAO.getAllOrders();
         request.setAttribute("orders", orders);
         System.out.println(orders);
+
+        List<User> customers=customerDAO.getAllCustomers();
+        request.setAttribute("customers", customers);
 
 
 
