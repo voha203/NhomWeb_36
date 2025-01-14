@@ -2,6 +2,7 @@ package dao;
 
 import model.User;
 import org.mindrot.jbcrypt.BCrypt;
+
 import java.sql.*;
 
 public class UserDAO {
@@ -88,6 +89,6 @@ public class UserDAO {
             System.err.println("Error while changing password: " + e.getMessage());
             e.printStackTrace();
         }
-        return false;
+        return Boolean.parseBoolean(sql);
     }
 }
