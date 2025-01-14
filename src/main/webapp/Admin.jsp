@@ -1,4 +1,6 @@
 <%@ page import="model.User" %>
+<%@ page import="model.Product" %>
+<
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -39,7 +41,6 @@
                 </ul>
             </div>
         </div>
-<
 
         <!-- Main Content  -->
         <div id="content1" class="content active">
@@ -165,24 +166,28 @@
                 <tr>
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
-            <th>Mô tả</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
             <th>Hình ảnh</th>
-            <th>Ngày tạo</th>
-            <th>Ngày cập nhật</th>
+            <th>Mô tả</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Ngày nhập kho</th>
+            <th>Chỉnh sửa</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="product" items="${productList}">
+        <c:forEach var="product" items="${products}">
             <tr>
                 <td>${product.product_id}</td>
                 <td>${product.product_name}</td>
-                <td>${product.description}</td>
-                <td>${product.price}</td>
-                <td>${product.stock}</td>
                 <td><img src="${product.image_url}" alt="Product Image" height="60" width="60"></td>
+                <td>${product.description}</td>
+                <td>${product.stock}</td>
+                <td>${product.price}</td>
                 <td>${product.created_at}</td>
+                <td>
+                    <button class="edit">Sửa</button>
+                    <button class="delete">Xóa</button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
@@ -191,7 +196,6 @@
         </section>
     </div>
          </div>
-</div>
 </div>
 </div>
 </body>

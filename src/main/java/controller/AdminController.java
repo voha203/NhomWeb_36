@@ -2,6 +2,7 @@ package controller;
 
 import dao.AdminDAO;
 import dao.EmployeeDAO;
+import dao.ProductDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,12 +19,15 @@ import java.util.List;
 public class AdminController extends HttpServlet {
     private AdminDAO adminDAO;
     private EmployeeDAO employeeDAO;
+    private ProductDAO productDAO;
 
     @Override
     public void init() throws ServletException {
         // Initialize the AdminDAO object
         this.adminDAO = new AdminDAO();
-        this.employeeDAO = new EmployeeDAO(); // Assuming AdminDAO has a default constructor
+        this.employeeDAO = new EmployeeDAO();
+        this.productDAO = new ProductDAO();
+        // Assuming AdminDAO has a default constructor
     }
 
     @Override
@@ -56,6 +60,10 @@ public class AdminController extends HttpServlet {
 
         List<User> employees = employeeDAO.getAllEmployees();
         String role = (String) request.getSession().getAttribute("role");
+
+        List<Product> product = productDAO.getAllProducts();
+        request.setAttribute("products", product);
+
 
         List<User> filteredEmployees = filterEmployeesByRole(employees, role);
         request.setAttribute("employees", filteredEmployees);
