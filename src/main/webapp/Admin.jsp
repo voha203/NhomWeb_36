@@ -37,7 +37,7 @@
                 </ul>
                 <div class="divider"></div>
                 <ul>
-                    <li><a href="Home.jsp"><i class="ti-arrow-left"></i> Đăng xuất (về trang chủ)</a></li>
+                    <li><a href="Home"><i class="ti-arrow-left"></i> Đăng xuất (về trang chủ)</a></li>
                 </ul>
             </div>
         </div>
@@ -356,8 +356,6 @@
                         <td>${customer.email}</td>
                         <td>${customer.address}</td>
                         <td>
-<%--                            <button class="edit-button">Sửa</button>--%>
-<%--                            <button class="delete-button">Xóa</button>--%>
     <button class="edit-button" onclick="window.location.href='Admin?customerId=${customer.user_id}'">Sửa</button>
 
     <form id="deleteCustomerForm" method="post" action="Admin">
