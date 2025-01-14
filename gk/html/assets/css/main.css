@@ -1338,6 +1338,22 @@ h2 {
     background-color: #45a049;
 }
 
+.navigation-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navigation-links a:hover {
+    text-decoration: underline;
+}
 
 /*trang quen mk*/
 /* Container cha */
