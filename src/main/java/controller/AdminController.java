@@ -75,6 +75,20 @@ public class AdminController extends HttpServlet {
             }
         }
 
+        String orderIdStr = request.getParameter("orderId"); // Lấy orderId từ request
+
+        if (orderIdStr != null && !orderIdStr.isEmpty()) {
+            try {
+                int orderId = Integer.parseInt(orderIdStr); // Cố gắng chuyển đổi orderId thành int
+                Order order = orderDAO.getOrderById(orderId); // Lấy thông tin đơn hàng theo orderId
+                request.setAttribute("order", order); // Gửi thông tin đơn hàng vào request để hiển thị trên form
+            } catch (NumberFormatException e) {
+                // Xử lý lỗi nếu orderId không hợp lệ
+                request.setAttribute("errorMessage", "Mã đơn hàng không hợp lệ.");
+            }
+        }
+
+
 
         List<User> employees = employeeDAO.getAllEmployees();
         String role = (String) request.getSession().getAttribute("role");
@@ -191,6 +205,54 @@ public class AdminController extends HttpServlet {
                 request.setAttribute("message", "Dữ liệu không hợp lệ.");
             }
         }
+
+        // Xử lý yêu cầu xóa đơn hàng
+        String deleteOrderIdStr = request.getParameter("deleteOrderId");
+
+        if (deleteOrderIdStr != null && !deleteOrderIdStr.isEmpty()) {
+            try {
+                int deleteOrderId = Integer.parseInt(deleteOrderIdStr);
+                boolean isDeleted = orderDAO.deleteOrder(deleteOrderId);
+                request.setAttribute("message", isDeleted ? "Đơn hàng đã được xóa thành công." : "Không thể xóa đơn hàng.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Mã đơn hàng không hợp lệ.");
+            }
+        }
+
+        // Xử lý thêm hoặc cập nhật đơn hàng
+        String orderIdStr = request.getParameter("orderId");
+        String userIdStr1 = request.getParameter("userId");
+        String name1 = request.getParameter("name");
+        String phoneStr = request.getParameter("phone");
+        String address1 = request.getParameter("address");
+        String totalAmountStr = request.getParameter("totalAmount");
+        String orderStatus = request.getParameter("orderStatus");
+        String orderDate = request.getParameter("orderDate");
+
+        if (orderIdStr != null && !orderIdStr.isEmpty()) {
+            try {
+                int orderId = Integer.parseInt(orderIdStr);
+                int userId = Integer.parseInt(userIdStr1);
+                int phone1= Integer.parseInt(phoneStr);
+                int totalAmount = Integer.parseInt(totalAmountStr);
+                boolean isUpdated = orderDAO.updateOrder(orderId, userId, name, phone1, address, totalAmount, orderStatus, orderDate);
+                request.setAttribute("message", isUpdated ? "Cập nhật đơn hàng thành công." : "Không thể cập nhật đơn hàng.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Dữ liệu không hợp lệ.");
+            }
+        } else {
+            try {
+                int userId = Integer.parseInt(userIdStr1);
+                int phone1 = Integer.parseInt(phoneStr);
+                int totalAmount = Integer.parseInt(totalAmountStr);
+                boolean isAdded = orderDAO.addOrder(userId, name, phone1, address, totalAmount, orderStatus, orderDate);
+                request.setAttribute("message", isAdded ? "Thêm đơn hàng thành công." : "Không thể thêm đơn hàng.");
+            } catch (NumberFormatException e) {
+                request.setAttribute("message", "Dữ liệu không hợp lệ.");
+            }
+        }
+
+        // Chuyển lại về phương thức doGet để cập nhật lại trang
 
 
 

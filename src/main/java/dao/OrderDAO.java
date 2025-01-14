@@ -101,6 +101,43 @@ public class OrderDAO {
         return false;
     }
 
+        // Phương thức lấy đơn hàng theo orderId
+        public Order getOrderById(int orderId) {
+            Order order = null;
+            String sql = "SELECT * FROM orders WHERE order_id = ?";
+
+            try (Connection connection = DatabaseConnection.getConnection();
+                 PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+                // Set giá trị cho PreparedStatement
+                preparedStatement.setInt(1, orderId);
+
+                // Thực hiện câu lệnh truy vấn
+                ResultSet rs = preparedStatement.executeQuery();
+
+                // Nếu tìm thấy kết quả
+                if (rs.next()) {
+                    order = new Order(
+                            rs.getInt("order_id"),
+                            rs.getInt("user_id"),
+                            rs.getString("name"),
+                            rs.getInt("phone"),
+                            rs.getString("address"),
+                            rs.getInt("total_amount"),
+                            rs.getString("order_status"),
+                            rs.getString("order_date")
+                    );
+                }
+            } catch (SQLException e) {
+                System.err.println("Error while fetching order by ID: " + e.getMessage());
+                e.printStackTrace();
+            }
+
+            return order; // Trả về đơn hàng, nếu không tìm thấy thì trả về null
+        }
+
+
+
 
 
     public static void main(String[] args) {
