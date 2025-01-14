@@ -43,11 +43,10 @@ public class AdminDAO {
 
         // Truy vấn số lượt bán được trong tháng
         public int getTotalOrdersInMonth() {
-            String sql = "SELECT COUNT(DISTINCT orders.order_id) AS total_sales " +
+            String sql = "SELECT COUNT(DISTINCT order_id) AS total_sales " +
                     "FROM orders " +
-                    "JOIN order_status ON orders.status_id = order_status.status_id " +
-                    "WHERE orders.order_date >= CURDATE() - INTERVAL 1 MONTH " +
-                    "AND order_status.status_name = 'Đã giao'";
+                    "WHERE order_date >= CURDATE() - INTERVAL 1 MONTH " +
+                    "AND status = 'Đã giao'";
 
             try (Connection conn = getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
                 if (rs.next()) {

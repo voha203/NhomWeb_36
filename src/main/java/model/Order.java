@@ -4,14 +4,14 @@ public class Order {
     private int order_id;
     private int user_id;
     private int total_amount;
-    private int status_id;
+    private String status;
     private String order_date;
 
-    public Order(int order_id, int user_id, int total_amount, int status_id, String order_date) {
+    public Order(int order_id, int user_id, int total_amount, String status, String order_date) {
         this.order_id = order_id;
         this.user_id = user_id;
         this.total_amount = total_amount;
-        this.status_id = status_id;
+        this.status = status;
         this.order_date = order_date;
     }
 
@@ -39,12 +39,12 @@ public class Order {
         this.total_amount = total_amount;
     }
 
-    public int getStatus_id() {
-        return status_id;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatus_id(int status_id) {
-        this.status_id = status_id;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getOrder_date() {
