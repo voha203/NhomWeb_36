@@ -2,7 +2,6 @@ import dao.DatabaseConnection;
 import controller.*;
 import dao.*;
 import model.Product;
-import view.*;
 
 public class main {
     public static void main(String[] args) {

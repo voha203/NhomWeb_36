@@ -1,4 +1,3 @@
-
 function changeImage(imageSrc) {
     document.getElementById('displayed-image').src = imageSrc;
 }
@@ -31,7 +30,7 @@ function changeContent(contentId) {
     }
 }
 
- // Toggle Sidebar
+// Toggle Sidebar
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const adminContainer = document.getElementById('admin-container');
@@ -46,4 +45,37 @@ function toggleSidebar() {
         adminContainer.style.marginLeft = '250px'; // Đẩy nội dung chính sang phải
     }
 }
-console.log('main.js loaded successfully');
+
+console.log('main.js loaded successfully')
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const deleteButtons = document.querySelectorAll(".delete-button");
+
+    deleteButtons.forEach(button => {
+    button.addEventListener("click", function () {
+    const row = this.closest("tr");
+    const userId = row.querySelector("td:first-child").innerText;
+
+    if (confirm(`Bạn có chắc muốn xóa nhân viên với ID: ${userId}?`)) {
+    // Gửi yêu cầu xóa đến server
+    fetch(`/Admin?user_id=${userId}`, {
+    method: "DELETE"
+})
+    .then(response => {
+    if (response.ok) {
+    alert("Xóa thành công!");
+    row.remove(); // Xóa dòng khỏi bảng
+} else {
+    alert("Xóa thất bại. Vui lòng thử lại.");
+}
+})
+    .catch(error => {
+    console.error("Lỗi:", error);
+    alert("Đã xảy ra lỗi khi xóa.");
+});
+}
+});
+});
+});
+
