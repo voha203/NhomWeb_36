@@ -9,10 +9,6 @@ public class DatabaseConnection {
     private static final String USER = "root"; // Thay "root" bằng tên user của MySQL
     private static final String PASSWORD = ""; // Thay "password" bằng mật khẩu của bạn
 
-//    public static Connection getConnection() throws SQLException {
-//        return DriverManager.getConnection(URL, USER, PASSWORD);
-//    }
-
 
     public static Connection getConnection() throws SQLException {
         try {

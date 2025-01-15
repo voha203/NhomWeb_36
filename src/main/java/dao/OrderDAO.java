@@ -23,7 +23,7 @@ public class OrderDAO {
                 order.setOrder_id(rs.getInt("order_id"));
                 order.setUser_id(rs.getInt("user_id"));
                 order.setName(rs.getString("name"));
-                order.setPhone(rs.getInt("phone"));
+                order.setPhone(rs.getString("phone"));
                 order.setAddress(rs.getString("address"));
                 order.setTotal_amount(rs.getInt("total_amount"));
                 order.setOrder_status(rs.getString("order_status"));
@@ -38,19 +38,19 @@ public class OrderDAO {
         return orders; // Trả về danh sách các đơn hàng
     }
 
-    public boolean addOrder(int userId, String name, int phone, String address, int totalAmount, String orderStatus, String orderDate) {
-        String sql = "INSERT INTO orders (user_id, name, phone, address, total_amount, order_status, order_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public boolean addOrder(String name1, String phone1, String address1, int total_amount, String order_status, String order_date) {
+        String sql = "INSERT INTO orders ( name, phone, address, total_amount, order_status, order_date) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setInt(1, userId);
-            preparedStatement.setString(2, name);
-            preparedStatement.setInt(3, phone);
-            preparedStatement.setString(4, address);
-            preparedStatement.setInt(5, totalAmount);
-            preparedStatement.setString(6, orderStatus);
-            preparedStatement.setString(7, orderDate);
+
+            preparedStatement.setString(1, name1);
+            preparedStatement.setString(2, phone1);
+            preparedStatement.setString(3, address1);
+            preparedStatement.setInt(4, total_amount);
+            preparedStatement.setString(5, order_status);
+            preparedStatement.setString(6, order_date);
 
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0;
@@ -60,20 +60,20 @@ public class OrderDAO {
         }
         return false;
     }
-    public boolean updateOrder(int orderId, int userId, String name, int phone, String address, int totalAmount, String orderStatus, String orderDate) {
-        String sql = "UPDATE orders SET user_id = ?, name = ?, phone = ?, address = ?, total_amount = ?, order_status = ?, order_date = ? WHERE order_id = ?";
+    public boolean updateOrder(int orderId, int userId, String name1, String phone1, String address1, int totalAmount, String orderStatus, String orderDate) {
+        String sql = "UPDATE orders SET  name = ?, phone = ?, address = ?, total_amount = ?, order_status = ?, order_date = ? WHERE order_id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setInt(1, userId);
-            preparedStatement.setString(2, name);
-            preparedStatement.setInt(3, phone);
-            preparedStatement.setString(4, address);
-            preparedStatement.setInt(5, totalAmount);
-            preparedStatement.setString(6, orderStatus);
-            preparedStatement.setString(7, orderDate);
-            preparedStatement.setInt(8, orderId);
+
+            preparedStatement.setString(1, name1);
+            preparedStatement.setString(2, phone1);
+            preparedStatement.setString(3, address1);
+            preparedStatement.setInt(4, totalAmount);
+            preparedStatement.setString(5, orderStatus);
+            preparedStatement.setString(6, orderDate);
+            preparedStatement.setInt(7, orderId);
 
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0;
@@ -121,7 +121,7 @@ public class OrderDAO {
                             rs.getInt("order_id"),
                             rs.getInt("user_id"),
                             rs.getString("name"),
-                            rs.getInt("phone"),
+                            rs.getString("phone"),
                             rs.getString("address"),
                             rs.getInt("total_amount"),
                             rs.getString("order_status"),

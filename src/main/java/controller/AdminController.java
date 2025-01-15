@@ -248,9 +248,9 @@ public class AdminController extends HttpServlet {
             try {
                 int orderId = Integer.parseInt(orderIdStr);
                 int userId = Integer.parseInt(userIdStr1);
-                int phone1 = Integer.parseInt(phoneStr);
+                String phone1 = request.getParameter("phoneStr"); // Không cần parseInt
                 int totalAmount = Integer.parseInt(totalAmountStr);
-                boolean isUpdated = orderDAO.updateOrder(orderId, userId, name, phone1, address, totalAmount, orderStatus, orderDate);
+                boolean isUpdated = orderDAO.updateOrder(orderId, userId, name1, phone1, address1, totalAmount, orderStatus, orderDate);
                 request.setAttribute("message", isUpdated ? "Cập nhật đơn hàng thành công." : "Không thể cập nhật đơn hàng.");
             } catch (NumberFormatException e) {
                 request.setAttribute("message", "Dữ liệu không hợp lệ.");
@@ -258,9 +258,9 @@ public class AdminController extends HttpServlet {
         } else {
             try {
                 int userId = Integer.parseInt(userIdStr1);
-                int phone1 = Integer.parseInt(phoneStr);
+                String phone1 = request.getParameter("phoneStr");
                 int totalAmount = Integer.parseInt(totalAmountStr);
-                boolean isAdded = orderDAO.addOrder(userId, name, phone1, address, totalAmount, orderStatus, orderDate);
+                boolean isAdded = orderDAO.addOrder( name1, phone1, address1, totalAmount, orderStatus, orderDate);
                 request.setAttribute("message", isAdded ? "Thêm đơn hàng thành công." : "Không thể thêm đơn hàng.");
             } catch (NumberFormatException e) {
                 request.setAttribute("message", "Dữ liệu không hợp lệ.");
@@ -307,7 +307,5 @@ public class AdminController extends HttpServlet {
 
     }
 }
-            // Lấy action từ request
-
 
 

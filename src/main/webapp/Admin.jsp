@@ -47,7 +47,7 @@
             <div class="dashboard">
                 <div class="box">
                     <h2>Doanh Thu</h2>
-                    <p><span><%= request.getAttribute("totalRevenue") %></span></p>
+                    <p><span><%= request.getAttribute("totalRevenue") %> đ</span></p>
                     <p class="status">Tổng doanh thu tháng</p>
                 </div>
                 <div class="box">
@@ -205,32 +205,32 @@
 
             <div class="form-popup" id="customerForm">
                 <form method="post" action="Admin" id="productFormContent">
-                    <input type="hidden" name="productId" value="${product.product_id}" />
+                    <input type="hidden" name="productId" value="${product!= null ? product.product_id : ''}" />
 
                    <div class="form-group">
                        <label for="productName">Tên sản phẩm:</label>
-                       <input type="text" id="productName" name="productName" placeholder="Nhập tên sản phẩm" value="${product.product_name}" required>
+                       <input type="text" id="productName" name="productName" placeholder="Nhập tên sản phẩm" value="${product != null ? product.product_name :''}" required>
                    </div>
 
                    <div class="form-group">
                        <label for="imageUrl">Hình ảnh:</label>
-                       <input type="text" id="imageUrl" name="imageUrl" placeholder="Nhập đường dẫn hình ảnh" value="${product.image_url}" required>
+                       <input type="text" id="imageUrl" name="imageUrl" placeholder="Nhập đường dẫn hình ảnh" value="${product != null ? product.image_url :''}" required>
                    </div>
 
                    <div class="form-group">
                        <label for="description">Mô tả:</label>
-                       <input  type="text" id="description" name="description" placeholder="Nhập mô tả" required>${product.description}</input>
+                       <input  type="text" id="description" name="description" placeholder="Nhập mô tả" value="${product!= null ? product.description :''}"required>
                    </div>
 
 
 
                    <div class="form-group">
                        <label for="stock">Số lượng:</label>
-                       <input type="text" id="stock" name="stock" placeholder="Nhập số lượng" value="${product.stock}" required>
+                       <input type="text" id="stock" name="stock" placeholder="Nhập số lượng" value="${product != null ? product.stock :''}" required>
                    </div>
                    <div class="form-group">
                        <label for="price">Giá:</label>
-                       <input type="text" id="price" name="price" placeholder="Nhập giá sản phẩm" value="${product.price}" required>
+                       <input type="text" id="price" name="price" placeholder="Nhập giá sản phẩm" value="${product != null ?  product.price :''}" required>
                    </div>
 
                    <div class="form-group">
@@ -288,36 +288,36 @@
 
             <div class="form-popup" id="customerForm">
                 <form method="post" action="Admin" id="customerFormContent">
-                    <input type="hidden" name="orderId" value="${order.order_id}" />
+                    <input type="hidden" name="orderId" value="${order != null ? order.order_id : ''}" />
 
                     <div class="form-group">
                         <label for="name">Tên khách hàng:</label>
-                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${order.name}" required>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${order != null ?  order.name : ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Số điện thoại:</label>
-                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${order.phone}" required>
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${order!= null ? order.phone : ''}" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Ngày cập nhật:</label>
-                        <input type="text" id="email" name="email" placeholder="Nhập ngày cập nhật" value="${order.order_date}" required>
+                        <label for="orderDate">Ngày cập nhật:</label>
+                        <input type="date" id="orderDate" name="orderDate" placeholder="Nhập ngày cập nhật" value="${order!= null ? order.order_date : ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="address">Địa chỉ nhận hàng:</label>
-                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${order.address}" required>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${order!= null ? order.address : ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="totalAmount">Tổng số tiền:</label>
-                        <input type="text" id="totalAmount" name="totalAmount" placeholder="Nhập tổng số tiền" value="${order.total_amount}" required>
+                        <input type="text" id="totalAmount" name="totalAmount" placeholder="Nhập tổng số tiền" value="${order!= null ? order.total_amount : ''}"required>
                     </div>
 
                     <div class="form-group">
                         <label for="orderStatus">Trạng thái đơn hàng:</label>
-                        <input type="text" id="orderStatus" name="orderStatus" placeholder="Nhập trạng thái đơn hàng" value="${order.order_status}" required>
+                        <input type="text" id="orderStatus" name="orderStatus" placeholder="Nhập trạng thái đơn hàng" value="${order!= null ? order.order_status : ''}" required>
                     </div>
 
                     <div class="form-group">
@@ -374,26 +374,26 @@
 
             <div class="form-popup" id="customerForm">
                 <form method="post" action="Admin" id="customerFormContent">
-                    <input type="hidden" name="customerId" value="${customer.user_id}" />
+                    <input type="hidden" name="customerId" value="${customer != null ? customer.user_id: ''}" />
 
                     <div class="form-group">
                         <label for="name">Tên khách hàng:</label>
-                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${customer.user_name}" required>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên khách hàng" value="${customer != null ? customer.user_name: ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Số điện thoại:</label>
-                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${customer.phone}" required>
+                        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="${customer != null ? customer.phone: ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="text" id="email" name="email" placeholder="Nhập email" value="${customer.email}" required>
+                        <input type="text" id="email" name="email" placeholder="Nhập email" value="${customer!= null ? customer.email: ''}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="address">Địa chỉ nhận hàng:</label>
-                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${customer.address}" required>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" value="${customer!= null ? customer.address: ''}" required>
                     </div>
 
                     <div class="form-group">

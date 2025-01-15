@@ -4,13 +4,13 @@ public class Order {
     private int order_id;
     private int user_id;
     private String name;
-    private int phone;
+    private String phone;
     private String address;
     private int total_amount;
     private String order_status;
     private String order_date;
 
-    public Order(int order_id, int user_id, String name, int phone, String address, int total_amount, String order_status, String order_date) {
+    public Order(int order_id, int user_id, String name, String phone, String address, int total_amount, String order_status, String order_date) {
         this.order_id = order_id;
         this.user_id = user_id;
         this.name = name;
@@ -49,11 +49,11 @@ public class Order {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
